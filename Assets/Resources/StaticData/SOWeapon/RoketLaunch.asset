@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774ac04900164a7db8f43fef1ffaeb27, type: 3}
+  m_Name: RoketLaunch
+  m_EditorClassIdentifier: 
+  _label: Roket
+  _icon: {fileID: 21300000, guid: a0aca8f55f20043aa820967787d70baa, type: 3}
+  _weaponType: 0
+  _bullet: {fileID: 5283713715723711154, guid: b691c0ce26dfc3f47ad7d037a884f1a9, type: 3}
+  _secondTime: 0
+  _weaponObject: {fileID: 8144370210384236826, guid: 4bbd67f6461818c4d960ec12fbe2f364, type: 3}

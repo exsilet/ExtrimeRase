@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774ac04900164a7db8f43fef1ffaeb27, type: 3}
+  m_Name: Oil
+  m_EditorClassIdentifier: 
+  _label: Oil
+  _icon: {fileID: 21300000, guid: adcc68df1454c4cce8372a68bcf13d4b, type: 3}
+  _weaponType: 1
+  _bullet: {fileID: 8434738143361547270, guid: b50c2229f803a2e4c8af7ae4a09abf6a, type: 3}
+  _secondTime: 12
+  _weaponObject: {fileID: 238582056563795933, guid: ef5e2288f34e35548afecc471c6b28e6, type: 3}
