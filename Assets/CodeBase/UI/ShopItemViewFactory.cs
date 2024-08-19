@@ -1,6 +1,5 @@
-﻿using System;
-using SaveData;
-using SO;
+﻿using UI.ShopSkins;
+using UI.Visitor;
 using UnityEngine;
 
 namespace UI
@@ -8,38 +7,34 @@ namespace UI
     [CreateAssetMenu(fileName = "ShopItemViewFactory", menuName = "Shop/ShopItemViewFactory")]
     public class ShopItemViewFactory : ScriptableObject
     {
-        [SerializeField] private CarViewShop _carViewShopPrefab;
+        [SerializeField] private ShopItemView _characterSkinItemPrefab;
     
         private int _price;
 
-        public CarViewShop Get(CarStaticData data, Transform parent, SaveLoadService saveLoadService)
+        public ShopItemView Get(ShopItem data, Transform parent)
         {
-            CarViewShop instance;
+            ShopItemVisitor visitor = new ShopItemVisitor(_characterSkinItemPrefab);
+            visitor.Visit(data);
 
-            switch (data)
-            {
-                case CarItem carViewShop:
-                    instance = Instantiate(_carViewShopPrefab, parent);
-                    break;
-            
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(instance));
-            }
-        
-            //ReadePrice(data, saveLoadService);
-            instance.Initialize(data, _price, saveLoadService);
+            ShopItemView instance = Instantiate(visitor.Prefab, parent);
+            instance.Initialize(data);
+
             return instance;
         }
-    
-        // private int ReadePrice(CarStaticData data, SaveLoadService saveLoad)
-        // {
-        //     if (data.Level > 0) 
-        //         _price = saveLoad.ReadPriceCar(data.Level.ToString());
-        //
-        //     if (_price == 0) 
-        //         _price = data.StartPrice;
-        //
-        //     return _price;
-        // }
+
+        private class ShopItemVisitor : IShopItemVisitor
+        {
+            private ShopItemView _characterSkinItemPrefab;
+            public ShopItemVisitor(ShopItemView characterSkinItemPrefab)
+            {
+                _characterSkinItemPrefab = characterSkinItemPrefab;
+            }
+
+            public ShopItemView Prefab { get; private set; }
+
+            public void Visit(ShopItem shopItem) => Visit((dynamic)shopItem);
+
+            public void Visit(CharacterSkinItem characterSkinItem) => Prefab = _characterSkinItemPrefab;
+        }
     }
 }
