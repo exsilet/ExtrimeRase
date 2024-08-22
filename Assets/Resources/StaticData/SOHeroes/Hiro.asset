@@ -16,4 +16,4 @@ MonoBehaviour:
     \u0420\u044B\u0446\u0430\u0440\u044C\" \u0422\u0430\u043A\u0435\u0434\u0430"
   _iconPlayer: {fileID: 21300000, guid: c73ff02c2f92c1842b826a0dc0a5bdb8, type: 3}
   _carPrefab: {fileID: 6624541213571853586, guid: 93c010cdfa15a284499869bdc646ff29, type: 3}
-  _heroesType: 7
+  _heroesType: 19

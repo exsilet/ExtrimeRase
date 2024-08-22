@@ -14,7 +14,7 @@ namespace Tracker
         [SerializeField] private StartBattle _startBattle;
 
         private LapCounter _playerLapCounter;
-        private readonly int _maxOpponent = 6;
+        private int _maxOpponent;
         private List<LapCounter> _opponentLapCounters = new List<LapCounter>();
         private List<RacerCheckpointData> _racerDataList = new List<RacerCheckpointData>();
 
@@ -23,12 +23,16 @@ namespace Tracker
         public void InitializedEnemy(LapCounter enemy)
         {
             _opponentLapCounters.Add(enemy);
+            _maxOpponent = _opponentLapCounters.Count-1;
 
             if (_opponentLapCounters.Count >= _maxOpponent)
             {
                 foreach (var opponent in _opponentLapCounters)
                 {
-                    _racerDataList.Add(new RacerCheckpointData { racer = opponent });
+                    if (!_racerDataList.Any(data => data.racer == opponent))
+                    {
+                        _racerDataList.Add(new RacerCheckpointData { racer = opponent });
+                    }
                 }
             }
         }

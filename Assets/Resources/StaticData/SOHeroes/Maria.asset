@@ -15,5 +15,5 @@ MonoBehaviour:
   _name: "\u041C\u0430\u0440\u0438\u044F \"\u041C\u043E\u043B\u043D\u0438\u044F\"
     \u0421\u0430\u043D\u0442\u043E\u0441"
   _iconPlayer: {fileID: 21300000, guid: e6c3bbcfc1bc5054e8f5d23098402a54, type: 3}
-  _carPrefab: {fileID: 6624541213571853586, guid: 93c010cdfa15a284499869bdc646ff29, type: 3}
-  _heroesType: 9
+  _carPrefab: {fileID: 5659494958040965949, guid: 698d5604529eee5419d7efd44757b84b, type: 3}
+  _heroesType: 21

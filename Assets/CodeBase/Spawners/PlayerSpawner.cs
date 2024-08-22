@@ -23,8 +23,8 @@ namespace Spawners
 
         private HeroHealth _heroHealth;
 
-        private void Start() => 
-            SpawnPlayer();
+        private void Start() => SpawnPlayer();
+        
         private void OnEnable()
         {
             if (_heroHealth != null)
