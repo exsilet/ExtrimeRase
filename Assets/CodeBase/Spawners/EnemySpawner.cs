@@ -51,10 +51,10 @@ namespace Spawners
 
         private void RespawnStuck()
         {
-            _timer -= Time.deltaTime;
-            
             if (_startBattle.CurrentStartBattle)
             {
+                _timer -= Time.deltaTime;
+                
                 if (_timer <= 0)
                 {
                     foreach (EnemyHealth enemy in _enemyHealth)

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Player
   _iconPlayer: {fileID: 0}
-  _carPrefab: {fileID: 4542516038809246048, guid: 91ae16d3c139f4343a022c11a4440618, type: 3}
+  _carPrefab: {fileID: 2777623745805931223, guid: b108fc4a92838eb4088f5089e11f2679, type: 3}
   _heroesType: 1
