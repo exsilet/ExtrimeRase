@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: 7a12c13bab09deb40915847daca8e2aa
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_1_Buggy.001
+    second: {fileID: 2100000, guid: 7b32ceb60407729439cfb53d25b05931, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_1_Car
+    second: {fileID: 2100000, guid: 00f4894d8cff07a41bcde3af8888a925, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_2_Buggy
+    second: {fileID: 2100000, guid: 322023420542aaa4dab83203e1b3dc39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_2_Car
+    second: {fileID: 2100000, guid: acfbe3de5a6b82e408568927ac0c8fdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_3_Car
+    second: {fileID: 2100000, guid: b6e4b16c7a5df1a48882c58c439db7ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_4_Car
+    second: {fileID: 2100000, guid: b9bb72c923a9ad54f89ad5fe4eb59d28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Apparatus.001
+    second: {fileID: 2100000, guid: 0cbfa34ed5aedb74b834d66f5d19521b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Big_Truck
+    second: {fileID: 2100000, guid: 139caefe65783664f8560fd3ba3a5c64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_1_Buggy
+    second: {fileID: 2100000, guid: c35a6a886dd4ca84c93ca259936c542d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_1_Car
+    second: {fileID: 2100000, guid: 30ff41ff149dc48439dbd935cd34f44c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_2_Buggy
+    second: {fileID: 2100000, guid: 265773f6b26fd2d4b8dd509ce7275da3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_2_Car
+    second: {fileID: 2100000, guid: b9901dba62b11b54e8c76c757efa8ce0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_3_Car
+    second: {fileID: 2100000, guid: 2e8c5d5d19a867d4a9616b290e2c0239, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_4_Car
+    second: {fileID: 2100000, guid: 47e99ff6fad7475418435cef9fe951a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_Big_Truck
+    second: {fileID: 2100000, guid: a7402342cb4cf8845b9d0a0eb5d3042b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_Bus
+    second: {fileID: 2100000, guid: c2276bfa62c503341bf43a4e04c6da25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_Crane
+    second: {fileID: 2100000, guid: d2ad780ac3010bb4b821e4ea081128d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_Nux_car
+    second: {fileID: 2100000, guid: 6ca932a89afe894499d0256e49b74ae1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_Small_Truck
+    second: {fileID: 2100000, guid: 2c637ab89b8e4184a9ba19fd7be992e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue_Tank_Oil
+    second: {fileID: 2100000, guid: 73508f49762358449b7c4818c9963a44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Bus
+    second: {fileID: 2100000, guid: 526837813a893574086afb51d075cb31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Crane
+    second: {fileID: 2100000, guid: 92d97c406524de44b80103d8416a6cdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Damage_Buffer
+    second: {fileID: 2100000, guid: 8d937d2d46e765f45967aade54a90633, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Engine_BaseColor
+    second: {fileID: 2100000, guid: b86da85dc1c36b4438f4bbb26276f895, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Gunn
+    second: {fileID: 2100000, guid: d9f8f774e5336ef4981911c284e387ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Nux_car
+    second: {fileID: 2100000, guid: 5d017aa67b754ff44afff71a0456315b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_1_Buggy
+    second: {fileID: 2100000, guid: 437653b66a0488d4baff2b3be1f20d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_1_Car
+    second: {fileID: 2100000, guid: a31049c2ab1744b4a96d598bb4aaabd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_2_Buggy
+    second: {fileID: 2100000, guid: d0cb6261e8f254945ada2a94e9e74496, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_2_Car
+    second: {fileID: 2100000, guid: 92d1f206e49bc104e8df35d8a57de1c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_3_Car
+    second: {fileID: 2100000, guid: 1e34ddafc9465a34d8d655681c61e910, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_4_Car
+    second: {fileID: 2100000, guid: 591698eeac46af84abbcd833718c210f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_Big_Truck
+    second: {fileID: 2100000, guid: e777982b1f8016742a542bf4e428300c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_Bus
+    second: {fileID: 2100000, guid: 7099bbedab200814f9b1af5a9681836e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_Crane
+    second: {fileID: 2100000, guid: f984fef5dbd7352498c313fee439a030, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_Nux_car
+    second: {fileID: 2100000, guid: 5f3167391fd21a840bef58ddf6698b0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_Small_Truck
+    second: {fileID: 2100000, guid: 2e1c274116b0710449bbc4663c3c3c27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Red_Tank_Oil
+    second: {fileID: 2100000, guid: 6cf5c980abb52d240a2bb6b4eded9fea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Small_Truck
+    second: {fileID: 2100000, guid: 621453e00e7cc724ca77a768c4a14a85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tank_oil
+    second: {fileID: 2100000, guid: c39f434b8b86cdb46b723c9f81bb6b98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Wheel_Exhaust.002
+    second: {fileID: 2100000, guid: 082bde9bfaa8dd346a86039dc36ff47c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_1_Buggy
+    second: {fileID: 2100000, guid: 2a7ffc6631df074489a9eb1bad308586, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_1_Car
+    second: {fileID: 2100000, guid: 1aea9685964d7a34aae1a7efa360a2a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_2_Buggy
+    second: {fileID: 2100000, guid: 8163d335a168cbc45818e4da1c04aa3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_2_Car
+    second: {fileID: 2100000, guid: 2dedd2202a2d24b40ae3dd1028d02a66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_3_Car
+    second: {fileID: 2100000, guid: 7692ef64e415bd14aa10204ac2e2d343, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_4_Car
+    second: {fileID: 2100000, guid: bdef482a05f179044838100d6dbbc39f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_Big_Truck
+    second: {fileID: 2100000, guid: 26b1299b6b779094684308bf783715eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_Bus
+    second: {fileID: 2100000, guid: 8c7ab614b8c594a49a18fb8617be4189, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_Crane
+    second: {fileID: 2100000, guid: 9a7d430d8614a5947ad9cae69bcd96e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_Nux_car
+    second: {fileID: 2100000, guid: e3c7ac3437097fb4f93494169f93cd1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_Small_Truck
+    second: {fileID: 2100000, guid: feaa49280ec4e074883d29feaa8d3290, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Yellow_Tank_Oil
+    second: {fileID: 2100000, guid: 8377f08b5e9a233408cde2cd6bee6f52, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
