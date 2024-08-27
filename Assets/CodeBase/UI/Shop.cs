@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using DefaultNamespace;
 using Hero;
 using SaveData;
@@ -13,19 +14,13 @@ namespace UI
     {
         [SerializeField] private ShopContent _contentItems;
 
-        [SerializeField] private ShopCategoryButton _characterSkinsButton;
-
         [SerializeField] private BuyButton _buyButton;
-        [SerializeField] private Button _selectionButton;
-        [SerializeField] private Image _selectedText;
+        [SerializeField] private Button _nextButtonCar;
+        [SerializeField] private Button _backButtonCar;
 
         [SerializeField] private ShopPanel _shopPanel;
 
         [SerializeField] private SkinPlacement _skinPlacement;
-
-        [SerializeField] private Camera _modelCamera;
-        [SerializeField] private Transform _characterCategoryCameraPosition;
-        [SerializeField] private Transform _mazeCategoryCameraPosition;
 
         private IDataProvider _dataProvider;
 
@@ -37,22 +32,24 @@ namespace UI
         private SkinUnlocker _skinUnlocker;
         private OpenSkinsChecker _openSkinsChecker;
         private SelectedSkinChecker _selectedSkinChecker;
+        private int _currentCarIndex = 0;
+
+        private List<ShopItem> contentItems;
 
         private void OnEnable()
         {
-            _characterSkinsButton.Click += OnCharacterSkinsButtonClick;
-
             _buyButton.Click += OnBuyButtonClick;
-            _selectionButton.onClick.AddListener(OnSelectionButtonClick);
+            _nextButtonCar.onClick.AddListener(ShowNextCar);
+            _backButtonCar.onClick.AddListener(ShowPreviousCar);
         }
 
         private void OnDisable()
         {
-            _characterSkinsButton.Click -= OnCharacterSkinsButtonClick;
-            _shopPanel.ItemViewClicked -= OnItemViewClicked;
+            _shopPanel.ItemView -= OnItemView;
 
             _buyButton.Click -= OnBuyButtonClick;
-            _selectionButton.onClick.RemoveListener(OnSelectionButtonClick);
+            _nextButtonCar.onClick.RemoveListener(ShowNextCar);
+            _backButtonCar.onClick.RemoveListener(ShowPreviousCar);
         }
 
         public void Initialize(IDataProvider dataProvider, PlayerMoney wallet, OpenSkinsChecker openSkinsChecker,
@@ -68,15 +65,15 @@ namespace UI
 
             _shopPanel.Initialize(openSkinsChecker, selectedSkinChecker);
 
-            _shopPanel.ItemViewClicked += OnItemViewClicked;
+            _shopPanel.ItemView += OnItemView;
 
             OnCharacterSkinsButtonClick();
         }
 
-        private void OnItemViewClicked(ShopItemView item)
+        private void OnItemView(ShopItemView item)
         {
             _previewedItem = item;
-            _skinPlacement.InstantiateModel(_previewedItem.Model);
+            _skinPlacement.InstantiateModel(_previewedItem.Model, _currentCarIndex);
 
             _openSkinsChecker.Visit(_previewedItem.Item);
 
@@ -86,11 +83,11 @@ namespace UI
 
                 if (_selectedSkinChecker.IsSelected)
                 {
-                    ShowSelectedText();
+                    HideBuyButton();
                     return;
                 }
 
-                ShowSelectionButton();
+                HideBuyButton();
             }
             else
             {
@@ -116,6 +113,8 @@ namespace UI
 
         private void OnSelectionButtonClick()
         {
+            //выбор машины
+            
             SelectSkin();
 
             _dataProvider.Save();
@@ -123,37 +122,39 @@ namespace UI
 
         private void OnCharacterSkinsButtonClick()
         {
-            _characterSkinsButton.Select();
-
-            UpdateCameraTransform(_characterCategoryCameraPosition);
-
-            _shopPanel.Show(_contentItems.CharacterSkinItems.Cast<ShopItem>());
+            _shopPanel.Show(_contentItems.CharacterSkinItems.Cast<ShopItem>(), _currentCarIndex);
         }
 
-        private void UpdateCameraTransform(Transform transform)
+        private void ShowNextCar()
         {
-            _modelCamera.transform.position = transform.position;
-            _modelCamera.transform.rotation = transform.rotation;
+            contentItems = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
+
+            _currentCarIndex++;
+            
+            if (_currentCarIndex >= contentItems.Count)
+            {
+                _currentCarIndex = 0;
+            }
+            
+            _shopPanel.Show(_contentItems.CharacterSkinItems.Cast<ShopItem>(), _currentCarIndex);
+        }
+
+        private void ShowPreviousCar()
+        {
+            contentItems = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
+            
+            _currentCarIndex--;
+            if (_currentCarIndex < 0)
+            {
+                _currentCarIndex = contentItems.Count - 1;
+            }
+            
+            _shopPanel.Show(_contentItems.CharacterSkinItems.Cast<ShopItem>(), _currentCarIndex);
         }
 
         private void SelectSkin()
         {
             _skinSelector.Visit(_previewedItem.Item);
-            _shopPanel.Select(_previewedItem);
-            ShowSelectedText();
-        }
-
-        private void ShowSelectionButton()
-        {
-            _selectionButton.gameObject.SetActive(true);
-            HideBuyButton();
-            HideSelectedText();
-        }
-
-        private void ShowSelectedText()
-        {
-            _selectedText.gameObject.SetActive(true);
-            HideSelectionButton();
             HideBuyButton();
         }
 
@@ -166,13 +167,8 @@ namespace UI
                 _buyButton.Unlock();
             else
                 _buyButton.Lock();
-
-            HideSelectedText();
-            HideSelectionButton();
         }
 
         private void HideBuyButton() => _buyButton.gameObject.SetActive(false);
-        private void HideSelectionButton() => _selectionButton.gameObject.SetActive(false);
-        private void HideSelectedText() => _selectedText.gameObject.SetActive(false);
     }
 }

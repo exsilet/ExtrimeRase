@@ -2,17 +2,16 @@
 {
     public enum CharacterSkins
     {
-        Beetle = 0,
-        BeetleMod,
+        Buggy = 0,
+        Beetle,
         Forced,
-        ForcedMod,
         Berona,
-        BeronaMod,
         Camara,
-        CamaraMod,
         Empura,
         Secret,
         Pudra,
-        Nurlat
+        Nurlat,
+        Curam,
+        BasDes
     }
 }

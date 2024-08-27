@@ -14,7 +14,7 @@ namespace SaveData
 
         private int _allMoney;
 
-        private DataBase()
+        public DataBase()
         {
             _allMoney = 20000;
 

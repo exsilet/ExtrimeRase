@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ namespace UI.MainMenu
 {
     public class AutoServiceController : MonoBehaviour
     {
-        [System.Serializable]
+        [Serializable]
         public class CarCard
         {
             public GameObject[] upgradeLevels; // Массив моделей машины для каждого уровня улучшений
@@ -48,7 +49,6 @@ namespace UI.MainMenu
 
         private void UpdateCarDisplay()
         {
-            // Удаляем предыдущую машину
             if (currentCarInstance != null)
             {
                 Destroy(currentCarInstance);
@@ -127,8 +127,7 @@ namespace UI.MainMenu
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-
-            // Возвращение вниз
+            
             elapsedTime = 0;
             while (elapsedTime < bounceTime)
             {

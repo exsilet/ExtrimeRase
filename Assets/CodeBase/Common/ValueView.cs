@@ -11,6 +11,7 @@ namespace Common
         public void Show(T value)
         {
             gameObject.SetActive(true);
+            
             _text.text = value.ToString();
         }
 

@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f425f7534b4318a0f8d02521eba64f, type: 3}
   m_Name: Forced
   m_EditorClassIdentifier: 
-  <Model>k__BackingField: {fileID: 5643152752015013275, guid: 2bdc95d602508d845ba8bbaf6a994a00, type: 3}
-  <Image>k__BackingField: {fileID: 0}
-  <Price>k__BackingField: 60000
+  <NameCar>k__BackingField: "\u0424\u043E\u0440\u0441\u0435\u0434"
+  <Speed>k__BackingField: 0
+  <Health>k__BackingField: 0
+  <Protection>k__BackingField: 0
+  <WeaponPower>k__BackingField: 0
+  <Model>k__BackingField: {fileID: 4176224040520441424, guid: 006a269da3ad97842b2116c461379a37, type: 3}
+  <Price>k__BackingField: 100000
   <SkinType>k__BackingField: 2

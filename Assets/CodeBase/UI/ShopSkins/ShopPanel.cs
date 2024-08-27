@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UI.Visitor;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UI.ShopSkins
 {
     public class ShopPanel : MonoBehaviour
     {
-        public event Action<ShopItemView> ItemViewClicked;
+        public event Action<ShopItemView> ItemView;
 
         private List<ShopItemView> _shopItems = new List<ShopItemView>();
 
@@ -17,6 +18,7 @@ namespace UI.ShopSkins
 
         private OpenSkinsChecker _openSkinsChecker;
         private SelectedSkinChecker _selectedSkinChecker;
+        private int _currentCarIndex = 0;
 
         public void Initialize(OpenSkinsChecker openSkinsChecker, SelectedSkinChecker selectedSkinChecker)
         {
@@ -24,52 +26,60 @@ namespace UI.ShopSkins
             _selectedSkinChecker = selectedSkinChecker;
         }
 
-        public void Show(IEnumerable<ShopItem> items)
+        public void Show(IEnumerable<ShopItem> items, int index)
         {
             Clear();
 
-            foreach (ShopItem item in items)
-            {
-                ShopItemView spawnedItem = _shopItemViewFactory.Get(item, _itemsParent);
+            IList<ShopItem> item = items.AsReadOnlyList();
+            
+            ShowCarCurrent(item, index);
 
-                spawnedItem.Click += OnItemViewClick;
-
-                spawnedItem.Unselect();
-                spawnedItem.UnHighlight();
-
-                _openSkinsChecker.Visit(spawnedItem.Item);
-
-                if (_openSkinsChecker.IsOpened)
-                {
-                    _selectedSkinChecker.Visit(spawnedItem.Item);
-
-                    if (_selectedSkinChecker.IsSelected)
-                    {
-                        spawnedItem.Select();
-                        spawnedItem.Highlight();
-                        ItemViewClicked?.Invoke(spawnedItem);
-                    }
-
-                    spawnedItem.Unlock();
-                }
-                else
-                {
-                    spawnedItem.Lock();
-                }
-
-                _shopItems.Add(spawnedItem);
-            }
-
-            Sort();
+            //Sort();
         }
 
-        public void Select(ShopItemView itemView)
+        private void ShowCarCurrent(IList<ShopItem> items, int index)
         {
-            foreach (var item in _shopItems)
-                item.Unselect();
+            _currentCarIndex = index;
+            
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (i == _currentCarIndex)
+                {
+                    ShopItemView spawnedItem = _shopItemViewFactory.Get(items[i], _itemsParent);
 
-            itemView.Select();
+                    ItemView?.Invoke(spawnedItem);
+
+                    _openSkinsChecker.Visit(spawnedItem.Item);
+
+                    if (_openSkinsChecker.IsOpened)
+                    {
+                        _selectedSkinChecker.Visit(spawnedItem.Item);
+
+                        if (_selectedSkinChecker.IsSelected)
+                        {
+                            //spawnedItem.Select();
+                            ItemView?.Invoke(spawnedItem);
+                        }
+
+                        spawnedItem.Unlock();
+                    }
+                    else
+                    {
+                        spawnedItem.Lock();
+                    }
+                    
+                    _shopItems.Add(spawnedItem);
+                }
+            }
         }
+
+        // public void Select(ShopItemView itemView)
+        // {
+        //     foreach (var item in _shopItems)
+        //         item.Unselect();
+        //
+        //     itemView.Select();
+        // }
 
         private void Sort()
         {
@@ -84,16 +94,9 @@ namespace UI.ShopSkins
 
         private void OnItemViewClick(ShopItemView itemView)
         {
-            Highlight(itemView);
-            ItemViewClicked?.Invoke(itemView);
-        }
-
-        private void Highlight(ShopItemView shopItemView)
-        {
-            foreach (var item in _shopItems)
-                item.UnHighlight();
-
-            shopItemView.Highlight();
+            Debug.Log(" app car " + itemView);
+            
+            ItemView?.Invoke(itemView);
         }
 
         private void Clear()
