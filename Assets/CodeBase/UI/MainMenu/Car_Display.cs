@@ -44,8 +44,8 @@ namespace UI.MainMenu
             }
 
             cars[index].SetActive(true); // Показать текущую машину
-            cars[index].transform.position = displayPosition; // Установить позицию машины
-            cars[index].transform.rotation = Quaternion.Euler(displayRotation); // Установить поворот машины
+            //cars[index].transform.position = displayPosition; // Установить позицию машины
+            //cars[index].transform.rotation = Quaternion.Euler(displayRotation); // Установить поворот машины
             cars[index].transform.localScale = displayScale; // Установить масштаб машины
         }
     }

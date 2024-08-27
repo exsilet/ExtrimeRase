@@ -18,6 +18,7 @@ namespace UI.MainMenu
         public Button previousCarButton; // Кнопка для перехода к предыдущей машине
         public Button upgradeButton; // Кнопка для улучшения машины
         public Button backButton; // Кнопка для возврата на панель гаража
+        public GameObject confirmationPanel; // Панель подтверждения действия
 
         private int currentCarIndex = 0; // Текущая машина
         private int[] carUpgradeLevels; // Массив уровней улучшений для каждой машины
@@ -35,11 +36,14 @@ namespace UI.MainMenu
             // Подключение кнопок к методам
             nextCarButton.onClick.AddListener(ShowNextCar);
             previousCarButton.onClick.AddListener(ShowPreviousCar);
-            upgradeButton.onClick.AddListener(ApplyUpgrade);
+            upgradeButton.onClick.AddListener(ShowConfirmationPanel);
             backButton.onClick.AddListener(ReturnToGarage);
 
             // Инициализация отображения машины
             UpdateCarDisplay();
+            
+            // Скрываем панель подтверждения в начале
+            confirmationPanel.SetActive(false);
         }
 
         private void UpdateCarDisplay()
@@ -68,6 +72,22 @@ namespace UI.MainMenu
             // Переключение на предыдущую машину
             currentCarIndex = (currentCarIndex - 1 + cars.Length) % cars.Length;
             UpdateCarDisplay();
+        }
+
+        private void ShowConfirmationPanel()
+        {
+            confirmationPanel.SetActive(true); // Показываем панель
+        }
+
+        public void OnYesButtonClicked()
+        {
+            ApplyUpgrade(); // Применяем улучшение
+            confirmationPanel.SetActive(false); // Скрываем панель после подтверждения
+        }
+
+        public void OnNoButtonClicked()
+        {
+            confirmationPanel.SetActive(false); // Скрываем панель без применения улучшения
         }
 
         private void ApplyUpgrade()
