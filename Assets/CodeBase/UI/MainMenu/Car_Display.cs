@@ -11,7 +11,7 @@ namespace UI.MainMenu
         public Vector3 displayRotation = new Vector3(0, 0, 0); // Вращение для отображения машин
         public Vector3 displayScale = new Vector3(1, 1, 1); // Масштаб для отображения машин
 
-        void Start()
+        private void Start()
         {
             DisplayCar(currentCarIndex); // Показать первую машину при старте
         }
@@ -36,7 +36,7 @@ namespace UI.MainMenu
             DisplayCar(currentCarIndex);
         }
 
-        void DisplayCar(int index)
+        private void DisplayCar(int index)
         {
             foreach (GameObject car in cars)
             {
