@@ -29506,6 +29506,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1755297007}
   m_SourcePrefab: {fileID: 100100000, guid: 20a0d30b9fb54ea469817709e5d58872, type: 3}
+--- !u!114 &903505698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1088494942585446582, guid: 20a0d30b9fb54ea469817709e5d58872, type: 3}
+  m_PrefabInstance: {fileID: 903505697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755297005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &905931641
 GameObject:
   m_ObjectHideFlags: 0
@@ -36145,6 +36156,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1077109690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7813190105562981933, guid: 0dda6a8946b336745a75ad88fcea7aae, type: 3}
+  m_PrefabInstance: {fileID: 339317887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077109684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1087724434
 GameObject:
   m_ObjectHideFlags: 0
@@ -65343,6 +65365,8 @@ GameObject:
   - component: {fileID: 2062007823}
   - component: {fileID: 2062007822}
   - component: {fileID: 2062007827}
+  - component: {fileID: 2062007829}
+  - component: {fileID: 2062007830}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -65452,6 +65476,32 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1062865706}
   shopPanel: {fileID: 2113529290}
   autoServicePanel: {fileID: 1545113303}
+--- !u!114 &2062007829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062007821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71e55e1139e407593d301eb7473f7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextGameSceneButton: {fileID: 1077109690}
+--- !u!114 &2062007830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062007821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64699ed514b428fa7dbfdae7003c517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _returnSceneButton: {fileID: 903505698}
 --- !u!1 &2065594158
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ namespace UI.MainMenu
     {
         public float rotationSpeed = 30f;  // Скорость вращения в градусах в секунду
 
-        void Update()
+        private void Update()
         {
             // Вращение вокруг оси Y
             transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
