@@ -4,46 +4,46 @@ namespace UI.MainMenu
 {
     public class MainMenu_Controller : MonoBehaviour
     {
-        // Панели меню
-        public GameObject mainMenuPanel;
-        public GameObject raceSelectionPanel;
-        public GameObject settingsPanel;
-        public GameObject helpPanel;
+        
+        [SerializeField] private GameObject _mainMenuPanel;
+        [SerializeField] private GameObject _raceSelectionPanel;
+        [SerializeField] private GameObject _settingsPanel;
+        [SerializeField] private GameObject _helpPanel;
 
         // Метод для перехода к панели гонок
         public void ShowRaceSelectionPanel()
         {
-            mainMenuPanel.SetActive(false);
-            raceSelectionPanel.SetActive(true);
-            settingsPanel.SetActive(false);
-            helpPanel.SetActive(false);
+            _mainMenuPanel.SetActive(false);
+            _raceSelectionPanel.SetActive(true);
+            _settingsPanel.SetActive(false);
+            _helpPanel.SetActive(false);
         }
 
         // Метод для перехода к панели настроек
         public void ShowSettingsPanel()
         {
-            mainMenuPanel.SetActive(false);
-            raceSelectionPanel.SetActive(false);
-            settingsPanel.SetActive(true);
-            helpPanel.SetActive(false);
+            _mainMenuPanel.SetActive(false);
+            _raceSelectionPanel.SetActive(false);
+            _settingsPanel.SetActive(true);
+            _helpPanel.SetActive(false);
         }
 
         // Метод для перехода к панели помощи
         public void ShowHelpPanel()
         {
-            mainMenuPanel.SetActive(false);
-            raceSelectionPanel.SetActive(false);
-            settingsPanel.SetActive(false);
-            helpPanel.SetActive(true);
+            _mainMenuPanel.SetActive(false);
+            _raceSelectionPanel.SetActive(false);
+            _settingsPanel.SetActive(false);
+            _helpPanel.SetActive(true);
         }
 
         // Метод для возврата в главное меню
         public void ShowMainMenuPanel()
         {
-            mainMenuPanel.SetActive(true);
-            raceSelectionPanel.SetActive(false);
-            settingsPanel.SetActive(false);
-            helpPanel.SetActive(false);
+            _mainMenuPanel.SetActive(true);
+            _raceSelectionPanel.SetActive(false);
+            _settingsPanel.SetActive(false);
+            _helpPanel.SetActive(false);
         }
 
         // Метод для выхода из игры
