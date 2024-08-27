@@ -1034,6 +1034,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 19, y: 4.4761314, z: 1}
   m_Center: {x: 0, y: 1.6281508, z: 0}
+--- !u!224 &495542949 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2684375908178092429, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
+  m_PrefabInstance: {fileID: 771863050860704407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &514763437
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,10 +4518,18 @@ PrefabInstance:
     - target: {fileID: 3334687553449062133, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
       propertyPath: _spawnPosition
       value: 
-      objectReference: {fileID: 2178228818334549982}
+      objectReference: {fileID: 5554268273772239117}
     - target: {fileID: 4383741083652178456, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
       propertyPath: _timerStartRespawn
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383741083652178456, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
+      propertyPath: _enemies.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383741083652178456, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
+      propertyPath: _spawnPoints.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4383741083652178456, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
       propertyPath: _spawnPoints.Array.data[0]
@@ -4537,11 +4550,15 @@ PrefabInstance:
     - target: {fileID: 4383741083652178456, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
       propertyPath: _spawnPoints.Array.data[4]
       value: 
-      objectReference: {fileID: 5269670488495436480}
+      objectReference: {fileID: 8495818166661325670}
     - target: {fileID: 4383741083652178456, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
       propertyPath: _spawnPoints.Array.data[5]
       value: 
       objectReference: {fileID: 8495818166661325670}
+    - target: {fileID: 4383741083652178456, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
+      propertyPath: _waypointCircuit.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4383741083652178456, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
       propertyPath: _waypointCircuit.Array.data[0]
       value: 
@@ -4578,6 +4595,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8759115645576143726, guid: 8ea418ec861e1df4dab9d3849448297a, type: 3}
+      propertyPath: _raceUI
+      value: 
+      objectReference: {fileID: 495542949}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

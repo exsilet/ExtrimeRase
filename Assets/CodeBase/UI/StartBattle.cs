@@ -26,19 +26,30 @@ namespace UI
         
         private void Start()
         {
-            if (_dialogue.DialogueStart)
-            {
-                _raceUI.gameObject.SetActive(true);
-                _timer = _timerStart;
-                _textTimer.text = _textTimer.ToString();
-                _uiTimer.SetActive(true);
-                _startGame = false;
+            _raceUI.gameObject.SetActive(true);
+            _timer = _timerStart;
+            _textTimer.text = _textTimer.ToString();
+            _uiTimer.SetActive(true);
+            _startGame = false;
 
-                _currentScene = SceneManager.GetActiveScene().name;
-                PlayerPrefs.SetString(KeyScene, _currentScene);
+            _currentScene = SceneManager.GetActiveScene().name;
+            PlayerPrefs.SetString(KeyScene, _currentScene);
             
-                StartCoroutine(StartTime());
-            }
+            StartCoroutine(StartTime());
+            
+            // if (_dialogue.DialogueStart)
+            // {
+            //     _raceUI.gameObject.SetActive(true);
+            //     _timer = _timerStart;
+            //     _textTimer.text = _textTimer.ToString();
+            //     _uiTimer.SetActive(true);
+            //     _startGame = false;
+            //
+            //     _currentScene = SceneManager.GetActiveScene().name;
+            //     PlayerPrefs.SetString(KeyScene, _currentScene);
+            //
+            //     StartCoroutine(StartTime());
+            // }
         }
 
         private IEnumerator StartTime()
