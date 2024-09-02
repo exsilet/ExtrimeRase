@@ -19,7 +19,7 @@ namespace UI.ShopSkins
         [SerializeField] private Image _lockImage;
         [SerializeField] private IntValueView _priceView;
         [SerializeField] private Image _iconBye;
-
+        
         public ShopItem Item { get; private set; }
 
         public bool IsLock { get; private set; }
@@ -59,6 +59,11 @@ namespace UI.ShopSkins
             _lockImage.gameObject.SetActive(IsLock);
             _priceView.Hide();
             _iconBye.gameObject.SetActive(true);
+        }
+
+        public ShopItem GetShopItem()
+        {
+            return Item;
         }
     }
 }

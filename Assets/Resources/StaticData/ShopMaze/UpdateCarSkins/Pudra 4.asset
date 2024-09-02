@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f425f7534b4318a0f8d02521eba64f, type: 3}
+  m_Name: Pudra 4
+  m_EditorClassIdentifier: 
+  <NameCar>k__BackingField: "\u041F\u0443\u0434\u0440\u0430"
+  <Speed>k__BackingField: 80
+  <Health>k__BackingField: 6
+  <Protection>k__BackingField: 3
+  <WeaponPower>k__BackingField: 2
+  <Model>k__BackingField: {fileID: 0}
+  <Price>k__BackingField: 140000
+  <SkinType>k__BackingField: 39

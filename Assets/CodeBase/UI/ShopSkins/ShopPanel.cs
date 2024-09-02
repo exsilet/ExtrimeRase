@@ -33,7 +33,6 @@ namespace UI.ShopSkins
             IList<ShopItem> item = items.AsReadOnlyList();
             
             ShowCarCurrent(item, index);
-
             //Sort();
         }
 
@@ -94,8 +93,6 @@ namespace UI.ShopSkins
 
         private void OnItemViewClick(ShopItemView itemView)
         {
-            Debug.Log(" app car " + itemView);
-            
             ItemView?.Invoke(itemView);
         }
 

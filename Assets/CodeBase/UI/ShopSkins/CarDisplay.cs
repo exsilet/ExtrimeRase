@@ -9,14 +9,9 @@ namespace UI.ShopSkins
         [SerializeField] private List<GameObject> _carsObjects;
         [SerializeField] private Image _shadowImage;
 
-        private List<CharacterSkins> _characterSkins = new();
+        private List<CarSkins> _characterSkins = new();
         private int _currentCarIndex = 0;
         public Vector3 displayScale = new Vector3(1, 1, 1);
-
-        public void Initialize(CharacterSkins characterSkins)
-        {
-            _characterSkins.Add(characterSkins);
-        }
         
         public void ShowNextCar()
         {

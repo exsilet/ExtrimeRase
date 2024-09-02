@@ -3,6 +3,7 @@ using System.Linq;
 using DefaultNamespace;
 using Hero;
 using SaveData;
+using UI.MainMenu;
 using UI.ShopSkins;
 using UI.Visitor;
 using UnityEngine;
@@ -19,9 +20,12 @@ namespace UI
         [SerializeField] private Button _backButtonCar;
 
         [SerializeField] private ShopPanel _shopPanel;
+        [SerializeField] private AutoCarUpdate _autoCarUpdate;
 
         [SerializeField] private SkinPlacement _skinPlacement;
+        [SerializeField] private PurchasedCars _purchasedCars;
 
+        private IPersistentData _persistentData;
         private IDataProvider _dataProvider;
 
         private ShopItemView _previewedItem;
@@ -34,13 +38,14 @@ namespace UI
         private SelectedSkinChecker _selectedSkinChecker;
         private int _currentCarIndex = 0;
 
-        private List<ShopItem> contentItems;
+        private List<ShopItem> _shopItems;
 
         private void OnEnable()
         {
             _buyButton.Click += OnBuyButtonClick;
             _nextButtonCar.onClick.AddListener(ShowNextCar);
             _backButtonCar.onClick.AddListener(ShowPreviousCar);
+            _shopPanel.ItemView += OnItemView;
         }
 
         private void OnDisable()
@@ -52,10 +57,11 @@ namespace UI
             _backButtonCar.onClick.RemoveListener(ShowPreviousCar);
         }
 
-        public void Initialize(IDataProvider dataProvider, PlayerMoney wallet, OpenSkinsChecker openSkinsChecker,
+        public void Initialize(IPersistentData persistentData, IDataProvider dataProvider, PlayerMoney wallet, OpenSkinsChecker openSkinsChecker,
             SelectedSkinChecker selectedSkinChecker, SkinSelector skinSelector, SkinUnlocker skinUnlocker)
         {
             _wallet = wallet;
+            _persistentData = persistentData;
             _openSkinsChecker = openSkinsChecker;
             _selectedSkinChecker = selectedSkinChecker;
             _skinSelector = skinSelector;
@@ -79,13 +85,13 @@ namespace UI
 
             if (_openSkinsChecker.IsOpened)
             {
-                _selectedSkinChecker.Visit(_previewedItem.Item);
-
-                if (_selectedSkinChecker.IsSelected)
-                {
-                    HideBuyButton();
-                    return;
-                }
+                // _selectedSkinChecker.Visit(_previewedItem.Item);
+                //
+                // if (_selectedSkinChecker.IsSelected)
+                // {
+                //     HideBuyButton();
+                //     return;
+                // }
 
                 HideBuyButton();
             }
@@ -100,24 +106,16 @@ namespace UI
             if (_wallet.IsEnough(_previewedItem.Price))
             {
                 _wallet.Spend(_previewedItem.Price);
-
                 _skinUnlocker.Visit(_previewedItem.Item);
 
                 SelectSkin();
 
                 _previewedItem.Unlock();
-
+                
+                _purchasedCars.Initialize(_previewedItem.Item);
+                _autoCarUpdate.Initialize(_previewedItem.Item);
                 _dataProvider.Save();
             }
-        }
-
-        private void OnSelectionButtonClick()
-        {
-            //выбор машины
-            
-            SelectSkin();
-
-            _dataProvider.Save();
         }
 
         private void OnCharacterSkinsButtonClick()
@@ -127,11 +125,11 @@ namespace UI
 
         private void ShowNextCar()
         {
-            contentItems = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
+            _shopItems = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
 
             _currentCarIndex++;
             
-            if (_currentCarIndex >= contentItems.Count)
+            if (_currentCarIndex >= _shopItems.Count)
             {
                 _currentCarIndex = 0;
             }
@@ -141,12 +139,12 @@ namespace UI
 
         private void ShowPreviousCar()
         {
-            contentItems = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
+            _shopItems = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
             
             _currentCarIndex--;
             if (_currentCarIndex < 0)
             {
-                _currentCarIndex = contentItems.Count - 1;
+                _currentCarIndex = _shopItems.Count - 1;
             }
             
             _shopPanel.Show(_contentItems.CharacterSkinItems.Cast<ShopItem>(), _currentCarIndex);

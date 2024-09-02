@@ -19,5 +19,4 @@ MonoBehaviour:
   <WeaponPower>k__BackingField: 0
   <Model>k__BackingField: {fileID: 5773957634111443544, guid: fb5046578d929e340a41975534b386ac, type: 3}
   <Price>k__BackingField: 40000
-  IsBye: 0
-  <SkinType>k__BackingField: 1
+  <SkinType>k__BackingField: 5
