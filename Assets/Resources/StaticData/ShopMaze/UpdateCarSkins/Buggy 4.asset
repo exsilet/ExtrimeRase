@@ -18,5 +18,6 @@ MonoBehaviour:
   <Protection>k__BackingField: 2
   <WeaponPower>k__BackingField: 1
   <Model>k__BackingField: {fileID: 3577608420669023891, guid: fd748dc8a07ee4442ac358ddf76a1a78, type: 3}
+  <LvlCar>k__BackingField: 4
   <Price>k__BackingField: 20000
   <SkinType>k__BackingField: 4

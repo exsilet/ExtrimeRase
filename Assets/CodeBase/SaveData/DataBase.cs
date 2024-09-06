@@ -25,7 +25,7 @@ namespace SaveData
 
             _openCharacterSkins = new List<CarSkins>() { _selectedCarSkin };
 
-            _slotCarsData = new List<SlotCarData>() { new SlotCarData(selectedCarSkin, 0) };
+            _slotCarsData = new List<SlotCarData>() { new SlotCarData(_selectedCarSkin, 0) };
         }
 
         public int Money
@@ -44,7 +44,7 @@ namespace SaveData
         }
 
         [JsonConstructor]
-        public DataBase(int money, CarSkins selectedCarSkin, List<CarSkins> openCharacterSkins, int index)
+        public DataBase(int money, CarSkins selectedCarSkin, List<CarSkins> openCharacterSkins, int skinLvl)
         {
             Money = money;
 
@@ -52,7 +52,7 @@ namespace SaveData
 
             _openCharacterSkins = new List<CarSkins>(openCharacterSkins);
 
-            _slotCarsData = new List<SlotCarData> { new(selectedCarSkin, index) };
+            _slotCarsData = new List<SlotCarData> { new(selectedCarSkin, skinLvl) };
         }
 
         public CarSkins selectedCarSkin

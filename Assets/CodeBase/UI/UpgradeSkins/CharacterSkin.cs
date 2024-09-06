@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using UI.ShopSkins;
+using UnityEngine;
 
-namespace UI.ShopSkins
+namespace UI.UpgradeSkins
 {
-    public class UpgradeCar : MonoBehaviour
+    public class CharacterSkin : MonoBehaviour
     {
         [SerializeField] private CharacterSkinItem carSkinItem;
 

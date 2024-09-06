@@ -1,6 +1,7 @@
 ﻿using Hero;
 using SaveData;
 using UI.ShopSkins;
+using UI.UpgradeSkins;
 using UI.Visitor;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace UI
         [SerializeField] private Shop _shop;
         [SerializeField] private WalletView _walletView;
         [SerializeField] private PurchasedCars _purchasedCars;
+        [SerializeField] private AutoCarUpdate _autoCarUpdate;
         
         private IDataProvider _dataProvider;
         private IPersistentData _persistentPlayerData;
@@ -26,6 +28,7 @@ namespace UI
             InitializeBuyCar();
 
             InitializeShop();
+            InitializeUpgradeCar();
         }
 
         private void InitializeData()
@@ -41,6 +44,14 @@ namespace UI
             _wallet = new PlayerMoney(_persistentPlayerData);
         
             _walletView.Initialize(_wallet);
+        }
+        
+        private void InitializeUpgradeCar()
+        {
+            SkinSelector skinSelector = new SkinSelector(_persistentPlayerData);
+            OpenSkinsChecker openSkinsChecker = new OpenSkinsChecker(_persistentPlayerData);
+            SelectedSkinChecker selectedSkinChecker = new SelectedSkinChecker(_persistentPlayerData);
+            
         }
 
         private void InitializeBuyCar()

@@ -5,6 +5,7 @@ using Hero;
 using SaveData;
 using UI.MainMenu;
 using UI.ShopSkins;
+using UI.UpgradeSkins;
 using UI.Visitor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -112,8 +113,7 @@ namespace UI
 
                 _previewedItem.Unlock();
                 
-                _purchasedCars.Initialize(_previewedItem.Item);
-                _autoCarUpdate.Initialize(_previewedItem.Item);
+                _purchasedCars.Initialize(_previewedItem.Item, _currentCarIndex);
                 _dataProvider.Save();
             }
         }

@@ -3,9 +3,9 @@
     public enum CarSkins
     {
         BuggyLvl0 = 0,
-        BuggyLvl1,
-        BuggyLvl2,
-        BuggyLvl3,
+        BuggyLvl1 = 1,
+        BuggyLvl2 = 2,
+        BuggyLvl3 = 3,
         BuggyLvl4,
         BeetleLvl0,
         BeetleLvl1,

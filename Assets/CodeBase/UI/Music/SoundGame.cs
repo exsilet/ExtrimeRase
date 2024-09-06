@@ -2,9 +2,10 @@
 
 namespace UI.Music
 {
-    [RequireComponent(typeof(AudioSource))]
-    public class SoundMusic : MonoBehaviour
+    public class SoundGame : MonoBehaviour
     {
+        private const string SoundVolume = "SoundVolume";
+        
         [SerializeField] private AudioClip _click;
         [SerializeField] private AudioClip _upgrade;
         [SerializeField] private AudioSource _audioSource;
@@ -13,8 +14,12 @@ namespace UI.Music
         
         private void Start()
         {
-            _audioSource = GetComponent<AudioSource>();
-            _volume = _audioSource.volume;
+            if (!PlayerPrefs.HasKey(SoundVolume))
+            {
+                _audioSource.volume = 1;
+            }
+            else
+                _audioSource.volume = PlayerPrefs.GetFloat(SoundVolume);
         }
 
         public void PlayClick()

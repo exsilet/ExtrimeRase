@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Camara 2
   m_EditorClassIdentifier: 
   <NameCar>k__BackingField: "\u041A\u0430\u0440\u043C\u0435\u043D"
-  <Speed>k__BackingField: 0
-  <Health>k__BackingField: 0
-  <Protection>k__BackingField: 0
-  <WeaponPower>k__BackingField: 0
-  <Model>k__BackingField: {fileID: 0}
+  <Speed>k__BackingField: 80
+  <Health>k__BackingField: 12
+  <Protection>k__BackingField: 12
+  <WeaponPower>k__BackingField: 9
+  <Model>k__BackingField: {fileID: 8214109186966328224, guid: f78bb848aa9e4bc41a59836ca1212ab9, type: 3}
+  <LvlCar>k__BackingField: 2
   <Price>k__BackingField: 80000
   <SkinType>k__BackingField: 22

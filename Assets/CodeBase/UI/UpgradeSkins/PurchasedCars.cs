@@ -3,36 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using DefaultNamespace;
 using SaveData;
+using UI.MainMenu;
+using UI.ShopSkins;
 using UI.Visitor;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.ShopSkins
+namespace UI.UpgradeSkins
 {
+    [Serializable]
+    public class BuyCars
+    {
+        public ShopItem ShopItem;
+        public GameObject Model;
+        public int LvlCar;
+        public int IndexModel;
+
+        public BuyCars(ShopItem shopItem, GameObject model, int lvlCar, int indexModel)
+        {
+            ShopItem = shopItem;
+            Model = model;
+            LvlCar = lvlCar;
+            IndexModel = indexModel;
+        }
+    }
+    
     public class PurchasedCars : MonoBehaviour
     {
-        [Serializable]
-        public class ByuCars
-        {
-            public ShopItem ShopItem;
-            public GameObject Model;
-
-            public ByuCars(ShopItem shopItem, GameObject model)
-            {
-                ShopItem = shopItem;
-                Model = model;
-            }
-        }
-
         [SerializeField] private Transform _carDisplayPoint;
         [SerializeField] private ShopContent _contentItems;
         [SerializeField] private SkinBuyPlacement _skinBuyPlacement;
+        [SerializeField] private AutoCarUpdate _autoCarUpdate;
         [SerializeField] private Button _nextButtonCar;
         [SerializeField] private Button _backButtonCar;
 
-        private List<ByuCars> _byuCars = new();
+        private List<BuyCars> _byuCars = new();
         private int _currentCarIndex = 0;
-        private int[] _carUpgradeLevels;
 
         private IDataProvider _dataProvider;
         private IPersistentData _persistentData;
@@ -42,6 +48,7 @@ namespace UI.ShopSkins
         private List<ShopItem> _shopItems;
         private ShopItem _shopItem;
         private ShopItemView _previewedItem;
+        public List<BuyCars> ByuCarsList => _byuCars;
 
         public void InitializeLoad(IPersistentData persistentData, IDataProvider dataProvider,
             OpenSkinsChecker openSkinsChecker, SkinSelector skinsSelector, SelectedSkinChecker selectedSkinChecker)
@@ -54,41 +61,37 @@ namespace UI.ShopSkins
 
             _shopItems = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
 
-            foreach (ShopItem item in _shopItems)
+            for (int i = 0; i < _shopItems.Count; i++)
             {
-                _openSkinsChecker.Visit(item);
+                _openSkinsChecker.Visit(_shopItems[i]);
 
                 if (_openSkinsChecker.IsOpened)
                 {
-                    UpdateCarDisplay(item);
-                    Initialize(item);
+                    UpdateCarDisplay(_shopItems[i]);
+                    Initialize(_shopItems[i], i);
                 }
             }
         }
 
-        public void Initialize(ShopItem shopItem)
+        public void Initialize(ShopItem shopItem, int index)
         {
             _shopItem = shopItem;
-            _byuCars.Add(new ByuCars(shopItem, shopItem.Model));
+            _byuCars.Add(new BuyCars(shopItem, shopItem.Model, shopItem.LvlCar, index));
 
+            _autoCarUpdate.SetCurrentCar(index);
+            _autoCarUpdate.Initialize(_byuCars);
+            
             UpdateCarDisplay(shopItem);
         }
 
-        public void InitializeUpdateCarLvl(ShopItem shopItem, ShopItem newLevelCar, int index)
+        public void InitializeUpdateCarLvl(ShopItem newLevelCar, int indexCurrentCar)
         {
-            if (_byuCars[index].ShopItem == shopItem)
-            {
-                Debug.Log(" delete car ");
-                _byuCars.Remove(_byuCars[index]);
-                _byuCars.Add(new ByuCars(newLevelCar, newLevelCar.Model));
-                UpdateCarDisplay(newLevelCar);
-            }
-            else
-            {
-                _byuCars.Remove(_byuCars[index]);
-                _byuCars.Add(new ByuCars(newLevelCar, newLevelCar.Model));
-                UpdateCarDisplay(newLevelCar);
-            }
+            _byuCars.RemoveAll(x => x.IndexModel == indexCurrentCar);
+            
+            _byuCars.Add(new BuyCars(newLevelCar, newLevelCar.Model, newLevelCar.LvlCar, indexCurrentCar));
+            
+            _autoCarUpdate.Initialize(_byuCars);
+            UpdateCarDisplay(newLevelCar);
         }
 
         private void OnEnable()
@@ -112,7 +115,7 @@ namespace UI.ShopSkins
 
         public void HideCars()
         {
-            foreach (ByuCars car in _byuCars)
+            foreach (BuyCars car in _byuCars)
             {
                 car.Model.SetActive(false);
             }
@@ -121,10 +124,10 @@ namespace UI.ShopSkins
         private void UpdateCarDisplay(ShopItem shopItem)
         {
             Clear();
-            
+
             _skinBuyPlacement.InstantiateModel(shopItem.Model);
         }
-        
+
         private void Clear()
         {
             foreach (Transform child in _carDisplayPoint)
@@ -141,7 +144,7 @@ namespace UI.ShopSkins
             {
                 _currentCarIndex = 0;
             }
-
+            
             NextCarModel();
         }
 
@@ -152,7 +155,7 @@ namespace UI.ShopSkins
             {
                 _currentCarIndex = _byuCars.Count - 1;
             }
-
+            
             NextCarModel();
         }
 
@@ -163,6 +166,7 @@ namespace UI.ShopSkins
                 if (i == _currentCarIndex)
                 {
                     _skinBuyPlacement.InstantiateModel(_byuCars[i].Model);
+                    _autoCarUpdate.SetCurrentCar(_byuCars[i].IndexModel);
                 }
             }
         }

@@ -2,15 +2,12 @@
 using Common;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace UI.ShopSkins
 {
     public class ShopItemView : MonoBehaviour
     {
-        public event Action<ShopItemView> Click;
-
         [SerializeField] private TMP_Text _nameCar;
         [SerializeField] private TMP_Text _speedCar;
         [SerializeField] private TMP_Text _health;
@@ -40,11 +37,6 @@ namespace UI.ShopSkins
             _priceView.Show(Price);
         }
 
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            Click?.Invoke(this);
-        }
-
         public void Lock()
         {
             IsLock = true;
@@ -59,11 +51,6 @@ namespace UI.ShopSkins
             _lockImage.gameObject.SetActive(IsLock);
             _priceView.Hide();
             _iconBye.gameObject.SetActive(true);
-        }
-
-        public ShopItem GetShopItem()
-        {
-            return Item;
         }
     }
 }

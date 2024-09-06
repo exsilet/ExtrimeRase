@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UI.Visitor;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -33,7 +32,6 @@ namespace UI.ShopSkins
             IList<ShopItem> item = items.AsReadOnlyList();
             
             ShowCarCurrent(item, index);
-            //Sort();
         }
 
         private void ShowCarCurrent(IList<ShopItem> items, int index)
@@ -72,35 +70,10 @@ namespace UI.ShopSkins
             }
         }
 
-        // public void Select(ShopItemView itemView)
-        // {
-        //     foreach (var item in _shopItems)
-        //         item.Unselect();
-        //
-        //     itemView.Select();
-        // }
-
-        private void Sort()
-        {
-            _shopItems = _shopItems
-                .OrderBy(item => item.IsLock)
-                .ThenByDescending(item => item.Price)
-                .ToList();
-
-            for (int i = 0; i < _shopItems.Count; i++)
-                _shopItems[i].transform.SetSiblingIndex(i);
-        }
-
-        private void OnItemViewClick(ShopItemView itemView)
-        {
-            ItemView?.Invoke(itemView);
-        }
-
         private void Clear()
         {
             foreach (ShopItemView item in _shopItems)
             {
-                item.Click -= OnItemViewClick;
                 Destroy(item.gameObject);
             }
 
