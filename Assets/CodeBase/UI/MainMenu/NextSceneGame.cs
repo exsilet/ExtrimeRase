@@ -9,7 +9,7 @@ namespace UI.MainMenu
         [SerializeField] private Button _nextGameSceneButton;
 
         private string _nameSceneGame;
-        private int _nextSceneIndex;
+        private int _nextSceneIndex = 5;
         
         private void Start()
         {

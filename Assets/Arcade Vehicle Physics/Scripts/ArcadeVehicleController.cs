@@ -175,7 +175,7 @@ namespace ArcadeVP
             foreach (Transform FW in FrontWheels)
             {
                 FW.localRotation = Quaternion.Slerp(FW.localRotation, Quaternion.Euler(FW.localRotation.eulerAngles.x,
-                                   30 * horizontalInput, FW.localRotation.eulerAngles.z), 0.1f);
+                    FW.localRotation.eulerAngles.y, 30 * horizontalInput), 0.1f);
                 FW.GetChild(0).localRotation = rb.transform.localRotation;
             }
             RearWheels[0].localRotation = rb.transform.localRotation;
@@ -185,14 +185,12 @@ namespace ArcadeVP
             if (carVelocity.z > 1)
             {
                 BodyMesh.localRotation = Quaternion.Slerp(BodyMesh.localRotation, Quaternion.Euler(Mathf.Lerp(0, -5, carVelocity.z / MaxSpeed),
-                                   BodyMesh.localRotation.eulerAngles.y, BodyTilt * horizontalInput), 0.05f);
+                    BodyTilt * horizontalInput, BodyMesh.localRotation.eulerAngles.z), 0.05f);
             }
             else
             {
                 BodyMesh.localRotation = Quaternion.Slerp(BodyMesh.localRotation, Quaternion.Euler(0, 0, 0), 0.05f);
             }
-
-
         }
 
         public bool grounded() //checks for if vehicle is grounded or not

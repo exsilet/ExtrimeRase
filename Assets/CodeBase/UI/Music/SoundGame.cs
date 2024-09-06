@@ -24,12 +24,12 @@ namespace UI.Music
 
         public void PlayClick()
         {
-            _audioSource.PlayOneShot(_click, _volume);
+            _audioSource.PlayOneShot(_click, _audioSource.volume);
         }
 
         public void PlayUpgrade()
         {
-            _audioSource.PlayOneShot(_upgrade, _volume);
+            _audioSource.PlayOneShot(_upgrade, _audioSource.volume);
         }
     }
 }

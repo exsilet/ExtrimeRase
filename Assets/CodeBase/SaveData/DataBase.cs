@@ -55,7 +55,7 @@ namespace SaveData
             _slotCarsData = new List<SlotCarData> { new(selectedCarSkin, skinLvl) };
         }
 
-        public CarSkins selectedCarSkin
+        public CarSkins SelectedCarSkin
         {
             get => _selectedCarSkin;
             set

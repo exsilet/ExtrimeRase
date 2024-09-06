@@ -5,6 +5,7 @@ using DefaultNamespace;
 using SaveData;
 using UI.MainMenu;
 using UI.ShopSkins;
+using UI.StartGameUI;
 using UI.Visitor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,6 +35,7 @@ namespace UI.UpgradeSkins
         [SerializeField] private ShopContent _contentItems;
         [SerializeField] private SkinBuyPlacement _skinBuyPlacement;
         [SerializeField] private AutoCarUpdate _autoCarUpdate;
+        [SerializeField] private StartGamePlay _startGame;
         [SerializeField] private Button _nextButtonCar;
         [SerializeField] private Button _backButtonCar;
 
@@ -71,13 +73,15 @@ namespace UI.UpgradeSkins
                     Initialize(_shopItems[i], i);
                 }
             }
+            
+            _startGame.Initialize(_skinSelector, _dataProvider);
         }
 
         public void Initialize(ShopItem shopItem, int index)
         {
             _shopItem = shopItem;
             _byuCars.Add(new BuyCars(shopItem, shopItem.Model, shopItem.LvlCar, index));
-
+            
             _autoCarUpdate.SetCurrentCar(index);
             _autoCarUpdate.Initialize(_byuCars);
             
@@ -106,25 +110,11 @@ namespace UI.UpgradeSkins
             _backButtonCar.onClick.RemoveListener(ShowPreviousCar);
         }
 
-        private void OnSelectionButtonClick()
-        {
-            SelectSkin();
-
-            _dataProvider.Save();
-        }
-
-        public void HideCars()
-        {
-            foreach (BuyCars car in _byuCars)
-            {
-                car.Model.SetActive(false);
-            }
-        }
-
         private void UpdateCarDisplay(ShopItem shopItem)
         {
             Clear();
-
+            
+            _startGame.CurrentCar(shopItem);
             _skinBuyPlacement.InstantiateModel(shopItem.Model);
         }
 
@@ -167,13 +157,9 @@ namespace UI.UpgradeSkins
                 {
                     _skinBuyPlacement.InstantiateModel(_byuCars[i].Model);
                     _autoCarUpdate.SetCurrentCar(_byuCars[i].IndexModel);
+                    _startGame.CurrentCar(_byuCars[i].ShopItem);
                 }
             }
-        }
-
-        private void SelectSkin()
-        {
-            //_skinSelector.Visit(_previewedItem.Item);
         }
     }
 }

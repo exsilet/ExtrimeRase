@@ -2,7 +2,7 @@
 {
     public enum HeroesTypeID
     {
-        Player = 1,
+        CurrentPlayer = 1,
         EnemyUSA1 = 2,
         EnemyUSA2 = 3,
         EnemyUSA3 = 4,

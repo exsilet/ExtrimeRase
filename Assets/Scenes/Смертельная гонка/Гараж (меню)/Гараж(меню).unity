@@ -12929,6 +12929,7 @@ MonoBehaviour:
   _contentItems: {fileID: 11400000, guid: d432583ac66225b49ba06abc169bc815, type: 2}
   _skinBuyPlacement: {fileID: 815393355}
   _autoCarUpdate: {fileID: 1545113307}
+  _startGame: {fileID: 2062007831}
   _nextButtonCar: {fileID: 2060981371}
   _backButtonCar: {fileID: 1764904125}
 --- !u!1 &1077109684 stripped
@@ -20998,6 +20999,7 @@ GameObject:
   - component: {fileID: 2062007827}
   - component: {fileID: 2062007829}
   - component: {fileID: 2062007830}
+  - component: {fileID: 2062007831}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -21135,6 +21137,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _returnSceneButton: {fileID: 903505698}
+--- !u!114 &2062007831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062007821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b355e7bf141144328ec3064e73007f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startButton: {fileID: 1077109690}
 --- !u!1 &2066771301
 GameObject:
   m_ObjectHideFlags: 0

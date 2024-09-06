@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using ArcadeVP;
 using DefaultNamespace;
+using GameScene;
 using Hero;
+using SaveData;
 using SO;
 using Tracker;
 using UI;
+using UI.Visitor;
 using UnityEngine;
 
 namespace Spawners
@@ -22,7 +25,18 @@ namespace Spawners
         [SerializeField] private float _respawnDelay;
 
         private HeroHealth _heroHealth;
+        private CharacterFactory _characterFactory;
+        private IPersistentData _persistentPlayerData;
+        private Player _hero;
 
+        public void Initialized(CharacterFactory characterFactory, IPersistentData persistentData, Player heroes)
+        {
+            _characterFactory = characterFactory;
+            // Player hero = _characterFactory.Get(_persistentPlayerData.DataBase.SelectedCarSkin);
+            // _hero = hero;
+            _hero = heroes;
+        }
+        
         private void Start() => SpawnPlayer();
         
         private void OnEnable()
@@ -40,7 +54,7 @@ namespace Spawners
 
         private void SpawnPlayer()
         {
-            GameObject car = Instantiate(_heroes.CarPrefab, _spawnPosition);
+            GameObject car = Instantiate(_hero.gameObject, _spawnPosition);
             _heroHealth = car.GetComponent<HeroHealth>();
             _heroHealth.Died += HeroHealthOnDied;
 

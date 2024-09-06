@@ -73,6 +73,7 @@ namespace UI.UpgradeSkins
         public void SetCurrentCar(int index)
         {
             _currentCarIndexShop = index;
+            DisplayCar();
         }
 
         public void OnYesButtonClicked()
