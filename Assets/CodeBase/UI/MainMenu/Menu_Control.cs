@@ -4,32 +4,29 @@ namespace UI.MainMenu
 {
     public class MenuController : MonoBehaviour
     {
-        public GameObject mainMenuPanel; // Панель главного меню
-        public GameObject shopPanel; // Панель магазина
-        public GameObject autoServicePanel; // Панель авто-сервиса
-
-        // Метод для перехода в магазин
+        [SerializeField] private Transform _mainMenuPanel;
+        [SerializeField] private Transform _shopPanel;
+        [SerializeField] private Transform _autoServicePanel;
+        
         public void GoToShop()
         {
-            mainMenuPanel.SetActive(false); // Скрываем главное меню
-            shopPanel.SetActive(true); // Показываем магазин
-            autoServicePanel.SetActive(false); // Скрываем авто-сервис
+            _mainMenuPanel.gameObject.SetActive(false);
+            _shopPanel.gameObject.SetActive(true);
+            _autoServicePanel.gameObject.SetActive(false);
         }
-
-        // Метод для перехода в авто-сервис
+        
         public void GoToAutoService()
         {
-            mainMenuPanel.SetActive(false); // Скрываем главное меню
-            shopPanel.SetActive(false); // Скрываем магазин
-            autoServicePanel.SetActive(true); // Показываем авто-сервис
+            _mainMenuPanel.gameObject.SetActive(false);
+            _shopPanel.gameObject.SetActive(false);
+            _autoServicePanel.gameObject.SetActive(true);
         }
-
-        // Метод для возврата в главное меню
+        
         public void BackToMainMenu()
         {
-            mainMenuPanel.SetActive(true); // Показываем главное меню
-            shopPanel.SetActive(false); // Скрываем магазин
-            autoServicePanel.SetActive(false); // Скрываем авто-сервис
+            _mainMenuPanel.gameObject.SetActive(true);
+            _shopPanel.gameObject.SetActive(false);
+            _autoServicePanel.gameObject.SetActive(false);
         }
     }
 }

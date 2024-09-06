@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f425f7534b4318a0f8d02521eba64f, type: 3}
   m_Name: Beetles
   m_EditorClassIdentifier: 
-  <Model>k__BackingField: {fileID: 7606125744323035493, guid: 9342abb8dc569c245a30a71f12d7324d, type: 3}
-  <Image>k__BackingField: {fileID: 0}
-  <Price>k__BackingField: 20000
-  <SkinType>k__BackingField: 0
+  <NameCar>k__BackingField: "\u0411\u0430\u0433\u0433\u0438"
+  <Speed>k__BackingField: 0
+  <Health>k__BackingField: 0
+  <Protection>k__BackingField: 0
+  <WeaponPower>k__BackingField: 0
+  <Model>k__BackingField: {fileID: 5773957634111443544, guid: fb5046578d929e340a41975534b386ac, type: 3}
+  <Price>k__BackingField: 40000
+  <SkinType>k__BackingField: 5

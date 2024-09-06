@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,15 +16,12 @@ namespace UI
         [SerializeField] private Color _lockColor;
         [SerializeField] private Color _unlockColor;
 
-        [SerializeField, Range(0, 1)] private float _lockAnimationDuration = 0.4f;
-        [SerializeField, Range(0.5f, 5)] private float _lockAnimationStrength = 2f;
-
         private bool _isLock;
 
         private void OnEnable() => _button.onClick.AddListener(OnButtonClick);
         private void OnDisable() => _button.onClick.RemoveListener(OnButtonClick);
 
-        public void UpdateText(int price) => _text.text = price.ToString();
+        public void UpdateText(int price) => _text.text = price.ToString("N0", CultureInfo.InvariantCulture);
 
         public void Lock()
         {
@@ -41,7 +39,6 @@ namespace UI
         {
             if (_isLock)
             {
-                //transform.DOShakePosition(_lockAnimationDuration, _lockAnimationStrength);
                 return;
             }
 

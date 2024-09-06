@@ -14,6 +14,6 @@ namespace UI.Visitor
         public void Visit(ShopItem shopItem) => Visit((dynamic)shopItem);
 
         public void Visit(CharacterSkinItem characterSkinItem) 
-            => IsSelected = _persistentData.DataBase.SelectedCharacterSkin == characterSkinItem.SkinType;
+            => IsSelected = _persistentData.DataBase.selectedCarSkin == characterSkinItem.SkinType;
     }
 }

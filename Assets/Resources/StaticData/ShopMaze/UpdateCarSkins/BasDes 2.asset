@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f425f7534b4318a0f8d02521eba64f, type: 3}
+  m_Name: BasDes 2
+  m_EditorClassIdentifier: 
+  <NameCar>k__BackingField: "\u0410\u0432\u0442\u043E\u0431\u0443\u0441"
+  <Speed>k__BackingField: 0
+  <Health>k__BackingField: 0
+  <Protection>k__BackingField: 0
+  <WeaponPower>k__BackingField: 0
+  <Model>k__BackingField: {fileID: 6933645819155418993, guid: ce312dd53975e2043b8702ea61edda10, type: 3}
+  <LvlCar>k__BackingField: 2
+  <Price>k__BackingField: 50000
+  <SkinType>k__BackingField: 52

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UI.Visitor;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UI.ShopSkins
 {
     public class ShopPanel : MonoBehaviour
     {
-        public event Action<ShopItemView> ItemViewClicked;
+        public event Action<ShopItemView> ItemView;
 
         private List<ShopItemView> _shopItems = new List<ShopItemView>();
 
@@ -17,6 +17,7 @@ namespace UI.ShopSkins
 
         private OpenSkinsChecker _openSkinsChecker;
         private SelectedSkinChecker _selectedSkinChecker;
+        private int _currentCarIndex = 0;
 
         public void Initialize(OpenSkinsChecker openSkinsChecker, SelectedSkinChecker selectedSkinChecker)
         {
@@ -24,83 +25,55 @@ namespace UI.ShopSkins
             _selectedSkinChecker = selectedSkinChecker;
         }
 
-        public void Show(IEnumerable<ShopItem> items)
+        public void Show(IEnumerable<ShopItem> items, int index)
         {
             Clear();
 
-            foreach (ShopItem item in items)
+            IList<ShopItem> item = items.AsReadOnlyList();
+            
+            ShowCarCurrent(item, index);
+        }
+
+        private void ShowCarCurrent(IList<ShopItem> items, int index)
+        {
+            _currentCarIndex = index;
+            
+            for (int i = 0; i < items.Count; i++)
             {
-                ShopItemView spawnedItem = _shopItemViewFactory.Get(item, _itemsParent);
-
-                spawnedItem.Click += OnItemViewClick;
-
-                spawnedItem.Unselect();
-                spawnedItem.UnHighlight();
-
-                _openSkinsChecker.Visit(spawnedItem.Item);
-
-                if (_openSkinsChecker.IsOpened)
+                if (i == _currentCarIndex)
                 {
-                    _selectedSkinChecker.Visit(spawnedItem.Item);
+                    ShopItemView spawnedItem = _shopItemViewFactory.Get(items[i], _itemsParent);
 
-                    if (_selectedSkinChecker.IsSelected)
+                    ItemView?.Invoke(spawnedItem);
+
+                    _openSkinsChecker.Visit(spawnedItem.Item);
+
+                    if (_openSkinsChecker.IsOpened)
                     {
-                        spawnedItem.Select();
-                        spawnedItem.Highlight();
-                        ItemViewClicked?.Invoke(spawnedItem);
+                        _selectedSkinChecker.Visit(spawnedItem.Item);
+
+                        if (_selectedSkinChecker.IsSelected)
+                        {
+                            //spawnedItem.Select();
+                            ItemView?.Invoke(spawnedItem);
+                        }
+
+                        spawnedItem.Unlock();
                     }
-
-                    spawnedItem.Unlock();
+                    else
+                    {
+                        spawnedItem.Lock();
+                    }
+                    
+                    _shopItems.Add(spawnedItem);
                 }
-                else
-                {
-                    spawnedItem.Lock();
-                }
-
-                _shopItems.Add(spawnedItem);
             }
-
-            Sort();
-        }
-
-        public void Select(ShopItemView itemView)
-        {
-            foreach (var item in _shopItems)
-                item.Unselect();
-
-            itemView.Select();
-        }
-
-        private void Sort()
-        {
-            _shopItems = _shopItems
-                .OrderBy(item => item.IsLock)
-                .ThenByDescending(item => item.Price)
-                .ToList();
-
-            for (int i = 0; i < _shopItems.Count; i++)
-                _shopItems[i].transform.SetSiblingIndex(i);
-        }
-
-        private void OnItemViewClick(ShopItemView itemView)
-        {
-            Highlight(itemView);
-            ItemViewClicked?.Invoke(itemView);
-        }
-
-        private void Highlight(ShopItemView shopItemView)
-        {
-            foreach (var item in _shopItems)
-                item.UnHighlight();
-
-            shopItemView.Highlight();
         }
 
         private void Clear()
         {
             foreach (ShopItemView item in _shopItems)
             {
-                item.Click -= OnItemViewClick;
                 Destroy(item.gameObject);
             }
 

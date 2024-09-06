@@ -11,7 +11,7 @@ namespace UI.Visitor
 
         public void Visit(ShopItem shopItem) => Visit((dynamic)shopItem);
 
-        public void Visit(CharacterSkinItem characterSkinItem) 
+        public void Visit(CharacterSkinItem characterSkinItem)
             => _persistentData.DataBase.OpenCharacterSkin(characterSkinItem.SkinType);
     }
 }

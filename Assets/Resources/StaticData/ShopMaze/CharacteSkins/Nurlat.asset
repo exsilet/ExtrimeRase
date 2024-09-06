@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f425f7534b4318a0f8d02521eba64f, type: 3}
   m_Name: Nurlat
   m_EditorClassIdentifier: 
-  <Model>k__BackingField: {fileID: 2991125053669347444, guid: c0be04905ac97d646a805d3851dbb59c, type: 3}
-  <Image>k__BackingField: {fileID: 0}
-  <Price>k__BackingField: 280000
-  <SkinType>k__BackingField: 11
+  <NameCar>k__BackingField: "\u041D\u0443\u0440\u043B\u0430\u0442"
+  <Speed>k__BackingField: 90
+  <Health>k__BackingField: 8
+  <Protection>k__BackingField: 6
+  <WeaponPower>k__BackingField: 4
+  <Model>k__BackingField: {fileID: 2307719265869936440, guid: 4cf0270ec05e22b488cc3d4678b85591, type: 3}
+  <Price>k__BackingField: 160000
+  <SkinType>k__BackingField: 40

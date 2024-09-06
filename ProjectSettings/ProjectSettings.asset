@@ -158,7 +158,9 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.ExtremeRace
     Standalone: com.DefaultCompany.ExtremeRace
+    iPhone: com.DefaultCompany.ExtremeRace
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -832,7 +834,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: TMP_PRESENT
+    Android: TMP_PRESENT;DREAMTECK_SPLINES
     Standalone: DREAMTECK_SPLINES;TMP_PRESENT
     WebGL: TMP_PRESENT
     iPhone: TMP_PRESENT

@@ -1,29 +1,26 @@
-﻿using Common;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DefaultNamespace
 {
     public class SkinPlacement : MonoBehaviour
     {
-        private const string RenderLayer = "SkinRender";
-
-        [SerializeField] private Rotator _rotator;
+        [SerializeField] private GameObject[] _carsObjects;
         
         private GameObject _currentModel;
 
-        public void InstantiateModel(GameObject model)
+        public void InstantiateModel(GameObject model, int index)
         {
             if (_currentModel != null)
-                Destroy(_currentModel.gameObject);
-
-            _rotator.ResetRotation();
-
-            _currentModel = Instantiate(model, transform);
-
-            Transform[] childrens = _currentModel.GetComponentsInChildren<Transform>();
-
-            foreach (var item in childrens)
-                item.gameObject.layer = LayerMask.NameToLayer(RenderLayer);
+                return;
+            
+            foreach (GameObject car in _carsObjects)
+            {
+                car.SetActive(false);
+            }
+            
+            _carsObjects[index].SetActive(true);
+            
+            //_currentModel = Instantiate(model, transform);
         }
     }
 }
