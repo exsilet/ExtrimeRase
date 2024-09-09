@@ -7,7 +7,6 @@ using SaveData;
 using SO;
 using Tracker;
 using UI;
-using UI.Visitor;
 using UnityEngine;
 
 namespace Spawners

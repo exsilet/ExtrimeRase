@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoketLaunch
   m_EditorClassIdentifier: 
   _label: Roket
-  _icon: {fileID: 21300000, guid: a0aca8f55f20043aa820967787d70baa, type: 3}
+  _icon: {fileID: 21300000, guid: b3b7c091284cfd34eb877e579f28cfec, type: 3}
   _weaponType: 0
   _bullet: {fileID: 5283713715723711154, guid: b691c0ce26dfc3f47ad7d037a884f1a9, type: 3}
   _secondTime: 0

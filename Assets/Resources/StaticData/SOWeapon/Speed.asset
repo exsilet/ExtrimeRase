@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Speed
   m_EditorClassIdentifier: 
   _label: Speed
-  _icon: {fileID: 21300000, guid: 825794b52af2c46ed9a87b47df461691, type: 3}
+  _icon: {fileID: 21300000, guid: 939a54f88d20fbc46968edaa8c97fcb6, type: 3}
   _weaponType: 4
   _bullet: {fileID: 0}
   _secondTime: 0.5

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5387154907747973330}
   - component: {fileID: 3373355269934302783}
   - component: {fileID: 1663938876985414351}
-  - component: {fileID: 1176196262408789455}
   - component: {fileID: 8918160249830925602}
+  - component: {fileID: 4290520738524593207}
   m_Layer: 0
   m_Name: Oil
   m_TagString: Untagged
@@ -29,9 +29,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238582056563795933}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: adcc68df1454c4cce8372a68bcf13d4b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57472f626095ccd469a875af85123040, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,7 +113,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768f2602fbb94e51a24812cd508feef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1176196262408789455
+--- !u!114 &8918160249830925602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238582056563795933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e473307df739480e958f7612ba061840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 11400000, guid: 0b4f3fcc657c1a6478dea079b4561008, type: 2}
+  _objectWeapon: {fileID: 238582056563795933}
+--- !u!65 &4290520738524593207
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,19 +146,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0422668, y: 1.0316553, z: 0.3570099}
-  m_Center: {x: -0.0087890625, y: -0.12417233, z: 0.17224884}
---- !u!114 &8918160249830925602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238582056563795933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e473307df739480e958f7612ba061840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weapon: {fileID: 11400000, guid: 0b4f3fcc657c1a6478dea079b4561008, type: 2}
-  _objectWeapon: {fileID: 238582056563795933}
+  m_Size: {x: 2.7800007, y: 2.77, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}

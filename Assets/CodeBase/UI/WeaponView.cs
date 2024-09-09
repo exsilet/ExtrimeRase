@@ -1,14 +1,13 @@
 ﻿using SO;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Weapons;
 
 namespace UI
 {
     public class WeaponView : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _nameWeapon;
+        //[SerializeField] private TMP_Text _nameWeapon;
+        [SerializeField] private Text _nameWeapon;
         [SerializeField] private Image _icon;
         [SerializeField] private Transform _view;
 

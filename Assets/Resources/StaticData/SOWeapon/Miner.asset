@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Miner
   m_EditorClassIdentifier: 
   _label: Mine
-  _icon: {fileID: 21300000, guid: 2e9c5b2e1bb824118b8deb06cc2f1780, type: 3}
+  _icon: {fileID: 21300000, guid: bc8f2c1f103cefe4f811910f1fcb25d6, type: 3}
   _weaponType: 2
   _bullet: {fileID: 7207773530815851130, guid: 83d05697b65e7e24e9a5df546e9c77cb, type: 3}
   _secondTime: 0
