@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 8030998446268822841}
   - component: {fileID: 2798748748248229836}
   - component: {fileID: 851727368535745849}
-  - component: {fileID: 8141559897220362627}
   m_Layer: 0
   m_Name: broken-wall12
   m_TagString: Untagged
@@ -192,33 +191,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4897108295862607643, guid: f81583ebfad2a411786bce4af86678a8, type: 3}
---- !u!205 &8141559897220362627
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5107362961019801168}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.03669989, y: 0.58948433, z: -0.10635269}
-  m_Size: 2.7525074
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2798748748248229836}
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 5971435817060164477}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 4957316515788221882}
-  m_Enabled: 1
 --- !u!1 &8680185388612489931
 GameObject:
   m_ObjectHideFlags: 0

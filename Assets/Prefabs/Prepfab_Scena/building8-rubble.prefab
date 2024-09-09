@@ -178,7 +178,6 @@ GameObject:
   - component: {fileID: 7343762338756498244}
   - component: {fileID: 4012335554737238581}
   - component: {fileID: 8417807646829433241}
-  - component: {fileID: 5933149097745669646}
   m_Layer: 0
   m_Name: building8-rubble
   m_TagString: Untagged
@@ -275,30 +274,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1617589198028345015, guid: 1e1396c3728d9eaf5b89ccfbc2b7a860, type: 3}
---- !u!205 &5933149097745669646
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8977026054479854868}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.95430946, y: 22.4651, z: -0.47459602}
-  m_Size: 60.3837
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 4012335554737238581}
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 8877235749067176747}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 5173500233380558413}
-  m_Enabled: 1

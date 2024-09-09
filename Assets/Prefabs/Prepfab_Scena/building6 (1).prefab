@@ -752,7 +752,6 @@ GameObject:
   - component: {fileID: 8195502450828631515}
   - component: {fileID: 655714738328289612}
   - component: {fileID: 546177959706159577}
-  - component: {fileID: 3295039473174307243}
   m_Layer: 0
   m_Name: building6 (1)
   m_TagString: Untagged
@@ -788,7 +787,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4952803285062910688}
-  m_Mesh: {fileID: 7387526801880451136, guid: 4f82edf891daebb5dae32db2482c0df9, type: 3}
+  m_Mesh: {fileID: 7311700993328633547, guid: 2b6bb2ab0f3bfbed69b53cc418dbe84b, type: 3}
 --- !u!23 &655714738328289612
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -809,7 +808,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a0a7e267844c4583da0b0b6584daa0fb, type: 2}
+  - {fileID: 2100000, guid: 71e024609e578b84caaea07c35441c26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -853,37 +852,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7387526801880451136, guid: 4f82edf891daebb5dae32db2482c0df9, type: 3}
---- !u!205 &3295039473174307243
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952803285062910688}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 2.027024, z: 0.08750069}
-  m_Size: 8.07961
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 655714738328289612}
-    - renderer: {fileID: 1592173128782596163}
-    - renderer: {fileID: 4623425437361302822}
-    - renderer: {fileID: 5216773586924557148}
-    - renderer: {fileID: 911447334305456409}
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 769346212900739801}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 4540898045389812877}
-  m_Enabled: 0
 --- !u!1 &5499053853663857089
 GameObject:
   m_ObjectHideFlags: 0

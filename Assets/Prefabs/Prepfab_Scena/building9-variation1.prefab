@@ -178,7 +178,6 @@ GameObject:
   - component: {fileID: 4965962386940573534}
   - component: {fileID: 9177099852758446541}
   - component: {fileID: 480862879364262001}
-  - component: {fileID: 1515508648724581091}
   m_Layer: 0
   m_Name: building9-variation1
   m_TagString: Untagged
@@ -275,30 +274,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4967850921592575564, guid: e46daf34b4f42752b96165cc90ae2dd0, type: 3}
---- !u!205 &1515508648724581091
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8090999496537225086}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.11984825, y: 8.889232, z: -1.6749468}
-  m_Size: 35.855137
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 9177099852758446541}
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1698329100211395156}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 305374850053485986}
-  m_Enabled: 1

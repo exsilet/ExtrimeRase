@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3146840005493748714}
   - component: {fileID: 8740117951708228813}
   - component: {fileID: 4312749672931802184}
-  - component: {fileID: 7256577572830601604}
   m_Layer: 0
   m_Name: metal0barrier
   m_TagString: Untagged
@@ -107,22 +106,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5584072690483805565, guid: d5d752efdecc7ef9d8be7fdad134f340, type: 3}
---- !u!205 &7256577572830601604
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4738811096193706353}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.003484726, y: 0.34789938, z: -0.020971}
-  m_Size: 1.0536903
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 8740117951708228813}
-  m_Enabled: 1

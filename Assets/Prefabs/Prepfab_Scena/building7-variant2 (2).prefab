@@ -888,7 +888,6 @@ GameObject:
   - component: {fileID: 7326992041038982332}
   - component: {fileID: 9042472422063330236}
   - component: {fileID: 5820026155391545243}
-  - component: {fileID: 4680593420631028091}
   m_Layer: 0
   m_Name: building7-variant2 (2)
   m_TagString: Untagged
@@ -924,7 +923,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6697755825248204670}
-  m_Mesh: {fileID: 2172364523575741990, guid: f2a97e75de70b01ea921ed42177ea1d8, type: 3}
+  m_Mesh: {fileID: 2172364523575741990, guid: b0da79396b011be4f9a68655d534e819, type: 3}
 --- !u!23 &9042472422063330236
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -945,7 +944,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e474d6e7779a12ae1a79d05d8759dd04, type: 2}
+  - {fileID: 2100000, guid: d282a265d8023af42b7de233e59a5228, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -989,33 +988,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2172364523575741990, guid: f2a97e75de70b01ea921ed42177ea1d8, type: 3}
---- !u!205 &4680593420631028091
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6697755825248204670}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 1.560138, z: 0}
-  m_Size: 8.177245
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 9042472422063330236}
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 6275291512818337560}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 3327807353622364083}
-  m_Enabled: 0
 --- !u!1 &7588997760947385861
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3564981661390862307}
   - component: {fileID: 1574967250316499585}
   - component: {fileID: 7250941340621349667}
-  - component: {fileID: 2321939001917247660}
   m_Layer: 0
   m_Name: elbow-joint
   m_TagString: Untagged
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c349bdace2960e779be903a8854cb210, type: 2}
+  - {fileID: 2100000, guid: ec900e81e5386cf49a827d2243f9eb01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,22 +106,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1519364455133395455, guid: 219b82e7f9290e5e9a622c7b8e466dbd, type: 3}
---- !u!205 &2321939001917247660
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5062790023741553902}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.041488696, z: 0.018109314}
-  m_Size: 0.08349295
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1574967250316499585}
-  m_Enabled: 1

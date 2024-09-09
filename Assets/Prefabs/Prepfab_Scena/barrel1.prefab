@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1998078009206544761}
   - component: {fileID: 3989465017623273244}
   - component: {fileID: 3240140168345850854}
-  - component: {fileID: 3481717985423426982}
   m_Layer: 0
   m_Name: barrel1
   m_TagString: Untagged
@@ -107,22 +106,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6084621319321188564, guid: f3182d9e80a626303a0a26632491f61f, type: 3}
---- !u!205 &3481717985423426982
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734937788760260674}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.004583895, y: 0.5800425, z: -0.00000011920929}
-  m_Size: 1.1638994
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 3989465017623273244}
-  m_Enabled: 1
