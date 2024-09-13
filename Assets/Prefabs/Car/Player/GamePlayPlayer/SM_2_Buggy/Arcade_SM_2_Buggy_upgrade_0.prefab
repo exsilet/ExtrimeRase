@@ -608,6 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventory: {fileID: 8187628503636539237}
+  _heroes: {fileID: 11400000, guid: fe8af1753a49f18489fafb0308a24bd9, type: 2}
 --- !u!114 &4994007847847854184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,7 +669,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2456449445918178497}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2a2dbfbbefcd4144ca8c1594254e3316, type: 3}
@@ -764,7 +765,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2456449445918178497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4c82b6d0e995654e8c09e1090eeb6ba, type: 3}
   m_Name: 
@@ -778,7 +779,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2456449445918178497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 384af59f1d82e4444b1aba8432f7cb28, type: 3}
   m_Name: 
@@ -809,7 +810,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2456449445918178497}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 791454b622ba3b14d90727a8c3602dc4, type: 3}
