@@ -13,7 +13,6 @@ namespace Spawners
 {
     public class PlayerSpawner : MonoBehaviour
     {
-        [SerializeField] private HeroesData _heroes;
         [SerializeField] private Transform _spawnPosition;
         [SerializeField] private RacePosition _racePosition;
         [SerializeField] private StartBattle _startBattle;
@@ -31,8 +30,6 @@ namespace Spawners
         public void Initialized(CharacterFactory characterFactory, IPersistentData persistentData, Player heroes)
         {
             _characterFactory = characterFactory;
-            // Player hero = _characterFactory.Get(_persistentPlayerData.DataBase.SelectedCarSkin);
-            // _hero = hero;
             _hero = heroes;
         }
         
@@ -70,7 +67,7 @@ namespace Spawners
             _heroViewHealth.Initialized(_heroHealth);
             
             LapCounter carLapCounter = car.GetComponent<LapCounter>();
-            _racePosition.InitializedPlayer(carLapCounter);
+            _racePosition.InitializedPlayer(carLapCounter, _hero.Heroes);
         }
 
         private void HeroHealthOnDied(HeroHealth hero)

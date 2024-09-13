@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyJapan 1
   m_EditorClassIdentifier: 
   _name: 
-  _iconPlayer: {fileID: 0}
+  _iconPlayer: {fileID: 21300000, guid: d23d09b62f42ead4e8d943fde24e1048, type: 3}
   _carPrefab: {fileID: 6624541213571853586, guid: c879eac60d26d5b4a9902f382079f0e9, type: 3}
   _heroesType: 9

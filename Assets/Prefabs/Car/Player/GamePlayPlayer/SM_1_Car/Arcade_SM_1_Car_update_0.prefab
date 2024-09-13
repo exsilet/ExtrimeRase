@@ -20918,6 +20918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventory: {fileID: 6640053725444468018}
+  _heroes: {fileID: 11400000, guid: fe8af1753a49f18489fafb0308a24bd9, type: 2}
 --- !u!114 &6303185140731251659
 MonoBehaviour:
   m_ObjectHideFlags: 0

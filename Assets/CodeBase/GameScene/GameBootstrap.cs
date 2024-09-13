@@ -1,4 +1,5 @@
-﻿using SaveData;
+﻿using Hero;
+using SaveData;
 using Spawners;
 using UI.Visitor;
 using UnityEngine;
@@ -31,7 +32,7 @@ namespace GameScene
         {
             SelectedSkinChecker selectedSkinChecker = new SelectedSkinChecker(_persistentPlayerData);
             SkinSelector skinSelector = new SkinSelector(_persistentPlayerData);
-            var hero = _characterFactory.Get(_persistentPlayerData.DataBase.SelectedCarSkin);
+            Player hero = _characterFactory.Get(_persistentPlayerData.DataBase.SelectedCarSkin);
             
             
             _playerSpawner.Initialized(_characterFactory, _persistentPlayerData, hero);

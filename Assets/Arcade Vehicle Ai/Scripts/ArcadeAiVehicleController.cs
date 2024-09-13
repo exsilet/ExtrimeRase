@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UI;
+using UI.VictoryPanel;
 using UnityEngine;
 
 namespace ArcadeVP
@@ -59,12 +58,12 @@ namespace ArcadeVP
         private StartBattle _startBattle;
         private bool _oilZone = false;
         private float desiredTurning;
-
-        public void Initialized(StartBattle startBattle)
-        {
-            _startBattle = startBattle;
-        }
         
+        private bool _isPaused = false;
+
+        public void Initialized(StartBattle startBattle) => 
+            _startBattle = startBattle;
+
         private void Start()
         {
             radius = rb.GetComponent<SphereCollider>().radius;
@@ -73,8 +72,86 @@ namespace ArcadeVP
                 Physics.defaultMaxAngularSpeed = 100;
             }
         }
+
+        private void FixedUpdate()
+        {
+            if (_startBattle.CurrentStartBattle)
+            {
+                if (_isPaused)
+                    return;
+                
+                carVelocity = carBody.transform.InverseTransformDirection(carBody.velocity);
+
+                if (Mathf.Abs(carVelocity.x) > 0)
+                {
+                    //changes friction according to sideways speed of car
+                    frictionMaterial.dynamicFriction = frictionCurve.Evaluate(Mathf.Abs(carVelocity.x / 100));
+                }
+
+
+                if (grounded())
+                {
+                    //turnlogic
+                    if (_oilZone == false)
+                    {
+                        float sign = Mathf.Sign(carVelocity.z);
+                        float TurnMultiplyer = turnCurve.Evaluate(carVelocity.magnitude / MaxSpeed);
+                        if (SpeedAI > 0.1f || carVelocity.z > 1)
+                        {
+                            carBody.AddTorque(Vector3.up * TurnAI * sign * turn * 100 * TurnMultiplyer);
+                        }
+                        else if (SpeedAI < -0.1f || carVelocity.z < -1)
+                        {
+                            carBody.AddTorque(Vector3.up * TurnAI * sign * turn * 100 * TurnMultiplyer);
+                        }
+                    }
+
+                    //brakelogic
+                    if (brakeAI > 0.1f)
+                    {
+                        rb.constraints = RigidbodyConstraints.FreezeRotationX;
+                    }
+                    else
+                    {
+                        rb.constraints = RigidbodyConstraints.None;
+                    }
+
+                    //accelaration logic
+
+                    if (movementMode == MovementMode.AngularVelocity)
+                    {
+                        if (Mathf.Abs(SpeedAI) > 0.1f)
+                        {
+                            rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, carBody.transform.right * SpeedAI * MaxSpeed / radius, accelaration * Time.deltaTime);
+                        }
+                    }
+                    else if (movementMode == MovementMode.Velocity)
+                    {
+                        if (Mathf.Abs(SpeedAI) > 0.1f && brakeAI < 0.1f)
+                        {
+                            rb.velocity = Vector3.Lerp(rb.velocity, carBody.transform.forward * SpeedAI * MaxSpeed, accelaration / 10 * Time.deltaTime);
+                        }
+                    }
+
+                    //body tilt
+                    carBody.MoveRotation(Quaternion.Slerp(carBody.rotation, Quaternion.FromToRotation(carBody.transform.up, hit.normal) * carBody.transform.rotation, 0.12f));
+                }
+                else
+                {
+                    carBody.MoveRotation(Quaternion.Slerp(carBody.rotation, Quaternion.FromToRotation(carBody.transform.up, Vector3.up) * carBody.transform.rotation, 0.02f));
+                }
+            }
+
+        }
+
         private void Update()
         {
+            if (_isPaused)
+            {
+                AudioListener.pause = true;
+                return;
+            }
+            
             Visuals();
             AudioManager();
 
@@ -164,8 +241,15 @@ namespace ArcadeVP
 
 
         }
+
+        public void IsPaused(bool isPaused) => 
+            _isPaused = isPaused;
+
         public void AudioManager()
         {
+            if (_isPaused)
+                return;
+            
             engineSound.pitch = Mathf.Lerp(minPitch, MaxPitch, Mathf.Abs(carVelocity.z) / MaxSpeed);
             if (Mathf.Abs(carVelocity.x) > 10 && grounded())
             {
@@ -177,74 +261,6 @@ namespace ArcadeVP
             }
         }
 
-        void FixedUpdate()
-        {
-            if (_startBattle.CurrentStartBattle)
-            {
-                carVelocity = carBody.transform.InverseTransformDirection(carBody.velocity);
-
-                if (Mathf.Abs(carVelocity.x) > 0)
-                {
-                    //changes friction according to sideways speed of car
-                    frictionMaterial.dynamicFriction = frictionCurve.Evaluate(Mathf.Abs(carVelocity.x / 100));
-                }
-
-
-                if (grounded())
-                {
-                    //turnlogic
-                    if (_oilZone == false)
-                    {
-                        float sign = Mathf.Sign(carVelocity.z);
-                        float TurnMultiplyer = turnCurve.Evaluate(carVelocity.magnitude / MaxSpeed);
-                        if (SpeedAI > 0.1f || carVelocity.z > 1)
-                        {
-                            carBody.AddTorque(Vector3.up * TurnAI * sign * turn * 100 * TurnMultiplyer);
-                        }
-                        else if (SpeedAI < -0.1f || carVelocity.z < -1)
-                        {
-                            carBody.AddTorque(Vector3.up * TurnAI * sign * turn * 100 * TurnMultiplyer);
-                        }
-                    }
-
-                    //brakelogic
-                    if (brakeAI > 0.1f)
-                    {
-                        rb.constraints = RigidbodyConstraints.FreezeRotationX;
-                    }
-                    else
-                    {
-                        rb.constraints = RigidbodyConstraints.None;
-                    }
-
-                    //accelaration logic
-
-                    if (movementMode == MovementMode.AngularVelocity)
-                    {
-                        if (Mathf.Abs(SpeedAI) > 0.1f)
-                        {
-                            rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, carBody.transform.right * SpeedAI * MaxSpeed / radius, accelaration * Time.deltaTime);
-                        }
-                    }
-                    else if (movementMode == MovementMode.Velocity)
-                    {
-                        if (Mathf.Abs(SpeedAI) > 0.1f && brakeAI < 0.1f)
-                        {
-                            rb.velocity = Vector3.Lerp(rb.velocity, carBody.transform.forward * SpeedAI * MaxSpeed, accelaration / 10 * Time.deltaTime);
-                        }
-                    }
-
-                    //body tilt
-                    carBody.MoveRotation(Quaternion.Slerp(carBody.rotation, Quaternion.FromToRotation(carBody.transform.up, hit.normal) * carBody.transform.rotation, 0.12f));
-                }
-                else
-                {
-                    carBody.MoveRotation(Quaternion.Slerp(carBody.rotation, Quaternion.FromToRotation(carBody.transform.up, Vector3.up) * carBody.transform.rotation, 0.02f));
-                }
-            }
-
-        }
-        
         public void OilZone()
         {
             _oilZone = !_oilZone;

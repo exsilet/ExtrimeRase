@@ -1,4 +1,4 @@
-﻿using Enemy;
+﻿using Enemies;
 using UnityEngine.Events;
 
 namespace Hero

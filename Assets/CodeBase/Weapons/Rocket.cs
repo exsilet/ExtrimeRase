@@ -1,5 +1,5 @@
 ﻿using System;
-using Enemy;
+using Enemies;
 using Hero;
 using UnityEngine;
 
