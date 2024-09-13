@@ -26,7 +26,7 @@ namespace Weapons
             
             if (other.gameObject.TryGetComponent(out ArcadeAiVehicleController enemy))
             {
-                
+                enemy.OilZone();
                 Destroy(gameObject, _timeDelay);
             }
             
@@ -39,17 +39,9 @@ namespace Weapons
 
         private void OnTriggerExit(Collider other)
         {
-            // Rigidbody rigidbody = other.GetComponent<Rigidbody>();
-            //
-            // if (rigidbody != null)
-            // {
-            //     rigidbody.drag = _originalDrag;
-            //     rigidbody.angularDrag = _originalAngularDrag;
-            // }
-            
             if (other.gameObject.TryGetComponent(out ArcadeAiVehicleController enemy))
             {
-                
+                enemy.OilZone();
             }
             
             if (other.gameObject.TryGetComponent(out ArcadeVehicleController player))

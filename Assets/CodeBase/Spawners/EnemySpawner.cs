@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using ArcadeVP;
-using Enemy;
+using Enemies;
 using SO;
 using Tracker;
 using UI;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Spawners
@@ -25,7 +24,7 @@ namespace Spawners
         private float _timer;
         private float _speedThreshold = 0.5f;
         private float _speedRespawn = 3f;
-
+        
         private void Start()
         {
             _timer = _timerStartRespawn;
@@ -80,12 +79,13 @@ namespace Spawners
                 _enemyHealth.Add(enemy);
 
                 enemy.GetComponent<ArcadeAiVehicleController>().Initialized(_startBattle);
+                enemy.GetComponent<Enemy>().HeroesEnemyData = enemyData;
 
                 var waypoint = enemy.GetComponent<WaypointProgressTracker>();
                 enemy.GetComponent<SwapPosition>().Initialized(waypoint, _waypointCircuit, _currentSpawnPointIndex);
 
                 LapCounter carLapCounter = enemy.GetComponent<LapCounter>();
-                _racePosition.InitializedEnemy(carLapCounter);
+                _racePosition.InitializedEnemy(carLapCounter, enemyData);
 
                 _currentSpawnPointIndex = (_currentSpawnPointIndex + 1) % _spawnPoints.Count;
             }

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CombineMeshes : MonoBehaviour
+public class Road_Mash_Batches : MonoBehaviour
 {
     void Start()
     {

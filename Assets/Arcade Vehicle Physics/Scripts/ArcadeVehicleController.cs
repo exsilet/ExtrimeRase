@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UI;
+using UI.VictoryPanel;
 using UnityEngine;
+using Zenject;
 
 namespace ArcadeVP
 {
@@ -46,12 +48,14 @@ namespace ArcadeVP
         private bool _oilZone = false;
         private float radius, horizontalInput, verticalInput;
         private Vector3 origin;
-
+        
+        private bool _isPaused;
+        
         public void Initialized(StartBattle startBattle)
         {
             _startBattle = startBattle;
         }
-        
+
         private void Start()
         {
             radius = rb.GetComponent<SphereCollider>().radius;
@@ -60,8 +64,15 @@ namespace ArcadeVP
                 Physics.defaultMaxAngularSpeed = 100;
             }
         }
+
         private void Update()
         {
+            if (_isPaused)
+            {
+                AudioListener.pause = true;
+                return;
+            }
+            
             if (_startBattle.CurrentStartBattle)
             {
                 if (_oilZone == false)
@@ -76,22 +87,12 @@ namespace ArcadeVP
             }
 
         }
-        public void AudioManager()
-        {
-            engineSound.pitch = Mathf.Lerp(minPitch, MaxPitch, Mathf.Abs(carVelocity.z) / MaxSpeed);
-            if (Mathf.Abs(carVelocity.x) > 10 && grounded())
-            {
-                SkidSound.mute = false;
-            }
-            else
-            {
-                SkidSound.mute = true;
-            }
-        }
 
-
-        void FixedUpdate()
+        private void FixedUpdate()
         {
+            if(_isPaused)
+                return;
+            
             carVelocity = carBody.transform.InverseTransformDirection(carBody.velocity);
 
             if (Mathf.Abs(carVelocity.x) > 0)
@@ -163,6 +164,26 @@ namespace ArcadeVP
             }
 
         }
+
+        public void IsPaused(bool isPaused) => 
+            _isPaused = isPaused;
+
+        public void AudioManager()
+        {
+            if (_isPaused)
+                return;
+            
+            engineSound.pitch = Mathf.Lerp(minPitch, MaxPitch, Mathf.Abs(carVelocity.z) / MaxSpeed);
+            if (Mathf.Abs(carVelocity.x) > 10 && grounded())
+            {
+                SkidSound.mute = false;
+            }
+            else
+            {
+                SkidSound.mute = true;
+            }
+        }
+
 
         public void OilZone()
         {
