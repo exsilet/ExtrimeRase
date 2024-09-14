@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Forced
   m_EditorClassIdentifier: 
   <NameCar>k__BackingField: "\u0424\u043E\u0440\u0441\u0435\u0434"
-  <Speed>k__BackingField: 0
-  <Health>k__BackingField: 0
-  <Protection>k__BackingField: 0
-  <WeaponPower>k__BackingField: 0
+  <Speed>k__BackingField: 67
+  <Health>k__BackingField: 56
+  <Protection>k__BackingField: 61
+  <WeaponPower>k__BackingField: 51
   <Model>k__BackingField: {fileID: 4176224040520441424, guid: 006a269da3ad97842b2116c461379a37, type: 3}
+  <LvlCar>k__BackingField: 0
   <Price>k__BackingField: 100000
   <SkinType>k__BackingField: 10

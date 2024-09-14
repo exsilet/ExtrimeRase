@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Nurlat
   m_EditorClassIdentifier: 
   <NameCar>k__BackingField: "\u041D\u0443\u0440\u043B\u0430\u0442"
-  <Speed>k__BackingField: 90
-  <Health>k__BackingField: 8
-  <Protection>k__BackingField: 6
-  <WeaponPower>k__BackingField: 4
+  <Speed>k__BackingField: 102
+  <Health>k__BackingField: 91
+  <Protection>k__BackingField: 98
+  <WeaponPower>k__BackingField: 82
   <Model>k__BackingField: {fileID: 2307719265869936440, guid: 4cf0270ec05e22b488cc3d4678b85591, type: 3}
+  <LvlCar>k__BackingField: 0
   <Price>k__BackingField: 160000
   <SkinType>k__BackingField: 40

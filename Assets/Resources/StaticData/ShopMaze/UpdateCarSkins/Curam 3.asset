@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Curam 3
   m_EditorClassIdentifier: 
   <NameCar>k__BackingField: "\u041A\u0443\u0440\u0430\u043C"
-  <Speed>k__BackingField: 0
-  <Health>k__BackingField: 0
-  <Protection>k__BackingField: 0
-  <WeaponPower>k__BackingField: 0
+  <Speed>k__BackingField: 95
+  <Health>k__BackingField: 82
+  <Protection>k__BackingField: 86
+  <WeaponPower>k__BackingField: 75
   <Model>k__BackingField: {fileID: 5840306892543449014, guid: 410f033b68c8f5b478aeee307617bc18, type: 3}
   <LvlCar>k__BackingField: 3
   <Price>k__BackingField: 150000
