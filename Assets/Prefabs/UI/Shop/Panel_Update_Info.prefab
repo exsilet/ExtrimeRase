@@ -1053,6 +1053,10 @@ MonoBehaviour:
   _upgradeLvlToLvl: {fileID: 7166075100883983051}
   _maxUpgrade: {fileID: 3112316823568694326}
   _priceView: {fileID: 4601762882829760258}
+  _speedSlider: {fileID: 4805965170079545891}
+  _healthSlider: {fileID: 2831404361932146473}
+  _protectionSlider: {fileID: 6225289788301280327}
+  _weaponPowerSlider: {fileID: 652461764067668560}
 --- !u!1 &2951531884429256198
 GameObject:
   m_ObjectHideFlags: 0

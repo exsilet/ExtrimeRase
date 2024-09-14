@@ -16,7 +16,25 @@ namespace UI.ShopSkins
         [SerializeField] private Image _lockImage;
         [SerializeField] private IntValueView _priceView;
         [SerializeField] private Image _iconBye;
-        
+
+        [SerializeField] private Slider _speedSlider;
+        [SerializeField] private Slider _healthSlider;
+        [SerializeField] private Slider _protectionSlider;
+        [SerializeField] private Slider _weaponPowerSlider;
+
+        // Минимальные и максимальные значения для нормализации
+        private readonly float _minSpeed = 10f;
+        private readonly float _maxSpeed = 142f;
+
+        private readonly float _minHealth = 10f;
+        private readonly float _maxHealth = 126f;
+
+        private readonly float _minProtection = 10f;
+        private readonly float _maxProtection = 136f;
+
+        private readonly float _minWeaponPower = 5f;
+        private readonly float _maxWeaponPower = 118f;
+
         public ShopItem Item { get; private set; }
 
         public bool IsLock { get; private set; }
@@ -33,6 +51,12 @@ namespace UI.ShopSkins
             _protection.text = item.Protection.ToString();
             _health.text = item.Health.ToString();
             _weaponPower.text = item.WeaponPower.ToString();
+
+            // Установка значений слайдеров на основе нормализации
+            _speedSlider.value = NormalizeValue(item.Speed, _minSpeed, _maxSpeed);
+            _healthSlider.value = NormalizeValue(item.Health, _minHealth, _maxHealth);
+            _protectionSlider.value = NormalizeValue(item.Protection, _minProtection, _maxProtection);
+            _weaponPowerSlider.value = NormalizeValue(item.WeaponPower, _minWeaponPower, _maxWeaponPower);
 
             _priceView.Show(Price);
         }
@@ -51,6 +75,12 @@ namespace UI.ShopSkins
             _lockImage.gameObject.SetActive(IsLock);
             _priceView.Hide();
             _iconBye.gameObject.SetActive(true);
+        }
+
+        // Метод для нормализации значений
+        private float NormalizeValue(float currentValue, float minValue, float maxValue)
+        {
+            return (currentValue - minValue) / (maxValue - minValue);
         }
     }
 }
