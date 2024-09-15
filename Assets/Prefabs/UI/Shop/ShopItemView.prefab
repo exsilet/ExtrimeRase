@@ -4095,8 +4095,8 @@ MonoBehaviour:
     \u0438 \u0430\u0442\u0430\u043A \u043D\u0430 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0435
     \u043F\u043E\u0437\u0438\u0446\u0438\u0438."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
-  m_sharedMaterial: {fileID: 7374927986402738804, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4649,7 +4649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4363039127825783039, guid: fd14af5ad42a71e4c90dfaab42c41a43, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -460.0001
+      value: -516
       objectReference: {fileID: 0}
     - target: {fileID: 4363039127825783039, guid: fd14af5ad42a71e4c90dfaab42c41a43, type: 3}
       propertyPath: m_LocalRotation.w

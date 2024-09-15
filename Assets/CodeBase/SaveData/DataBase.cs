@@ -17,9 +17,15 @@ namespace SaveData
 
         private int _allMoney;
 
+        private int _indexScene;
+        private int _level;
+        private int _scoreGameTrack;
+
         public DataBase()
         {
             _allMoney = 200000;
+            _indexScene = 1;
+            _level = 2;
 
             _selectedCarSkin = CarSkins.EmpuraLvl0;
 
@@ -43,10 +49,57 @@ namespace SaveData
             }
         }
 
+        public int IndexScene
+        {
+            get => _indexScene;
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value));
+                }
+
+                _indexScene = value;
+            }
+        }
+        
+        public int LevelGame
+        {
+            get => _level;
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value));
+                }
+
+                _level = value;
+            }
+        }
+        
+        public int ScoreGameTrack
+        {
+            get => _scoreGameTrack;
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value));
+                }
+
+                _scoreGameTrack = value;
+            }
+        }
+
         [JsonConstructor]
-        public DataBase(int money, CarSkins selectedCarSkin, List<CarSkins> openCharacterSkins, int skinLvl)
+        public DataBase(int money, CarSkins selectedCarSkin, List<CarSkins> openCharacterSkins, int skinLvl, int indexScene, int levelGame)
         {
             Money = money;
+            IndexScene = indexScene;
+            LevelGame = levelGame;
 
             _selectedCarSkin = selectedCarSkin;
 

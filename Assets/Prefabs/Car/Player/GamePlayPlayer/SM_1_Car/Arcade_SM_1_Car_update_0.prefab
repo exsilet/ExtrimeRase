@@ -5492,8 +5492,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3064193857973618246}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12761535, y: -0, z: -0, w: 0.99182373}
-  m_LocalPosition: {x: 0, y: 1.5700002, z: -6}
+  m_LocalRotation: {x: 0.36155206, y: -0.1659429, z: 0.06556189, w: 0.91512007}
+  m_LocalPosition: {x: 3, y: 8, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15499,7 +15499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 1.57, z: -6}
+  m_FollowOffset: {x: 3, y: 8, z: -8}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0.1
@@ -20685,7 +20685,6 @@ MonoBehaviour:
   MaxPitch: 3
   SkidSound: {fileID: 7539015528595579555}
   skidWidth: 0.19310191
-  _startBattle: {fileID: 0}
 --- !u!54 &9046955756120021997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20723,7 +20722,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0b2844ba13c61eb459484abc96bde242, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47c444c34c352ec438fa68b785aa63d5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

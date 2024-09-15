@@ -40,7 +40,7 @@ namespace ArcadeVP
         [HideInInspector]
         public float skidWidth;
         
-        [SerializeField] private StartBattle _startBattle;
+        private StartBattle _startBattle;
         private bool _oilZone = false;
         private float radius, horizontalInput, verticalInput;
         private Vector3 origin;

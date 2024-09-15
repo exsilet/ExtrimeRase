@@ -1,5 +1,6 @@
 ﻿using Hero;
 using SaveData;
+using UI.MainMenu;
 using UI.UpgradeSkins;
 using UI.Visitor;
 using UnityEngine;
@@ -12,11 +13,14 @@ namespace UI
         [SerializeField] private WalletView _walletView;
         [SerializeField] private PurchasedCars _purchasedCars;
         [SerializeField] private AutoCarUpdate _autoCarUpdate;
+        [SerializeField] private NextTrackGame _nextTrack;
         
         private IDataProvider _dataProvider;
         private IPersistentData _persistentPlayerData;
 
         private PlayerMoney _wallet;
+        private PlayerScore _playerScore;
+        private NextGameScene _nextGameScene;
 
         public void Awake()
         {
@@ -27,6 +31,8 @@ namespace UI
             InitializeBuyCar();
 
             InitializeShop();
+
+            InitializeGameTrace();
         }
 
         private void InitializeData()
@@ -35,6 +41,14 @@ namespace UI
             _dataProvider = new DataLocalProvider(_persistentPlayerData);
 
             LoadDataOrInit();
+        }
+
+        private void InitializeGameTrace()
+        {
+            _nextGameScene = new NextGameScene(_persistentPlayerData);
+            _playerScore = new PlayerScore(_persistentPlayerData);
+            
+            _nextTrack.Initialize(_nextGameScene, _dataProvider, _playerScore);
         }
 
         private void InitializeWallet()
