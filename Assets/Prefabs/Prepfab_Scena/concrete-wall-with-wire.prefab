@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 8542249204479512888}
   - component: {fileID: 2229504004185351231}
   - component: {fileID: 5012430560446277137}
-  - component: {fileID: 3462909096485836251}
+  - component: {fileID: 2188165263334204407}
   m_Layer: 0
   m_Name: concrete-wall-with-wire
   m_TagString: Untagged
@@ -298,8 +298,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3462909096485836251
-MeshCollider:
+--- !u!65 &2188165263334204407
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -315,8 +315,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8108206705843175784, guid: 4f4c0cd5800cc615b84b5ef03017cce0, type: 3}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0078235, y: 3.0078235, z: 0.16875221}
+  m_Center: {x: 0, y: 1.5056431, z: 0}

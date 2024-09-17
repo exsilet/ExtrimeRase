@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Ray "Racer" Martin
   _iconPlayer: {fileID: 0}
-  _carPrefab: {fileID: 6624541213571853586, guid: 12ccf023b4d8ad543bd1f285d44656e5, type: 3}
+  _carPrefab: {fileID: 2780060566418772707, guid: d89e0ce195de98844a97f9eddca130dc, type: 3}
   _heroesType: 3

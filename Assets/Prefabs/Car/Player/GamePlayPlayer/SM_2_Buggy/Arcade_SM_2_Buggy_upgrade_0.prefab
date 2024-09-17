@@ -375,7 +375,6 @@ MonoBehaviour:
   MaxPitch: 3
   SkidSound: {fileID: 6775260111856478308}
   skidWidth: 0.21627414
-  _startBattle: {fileID: 0}
 --- !u!54 &4540828177612231740
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -415,7 +414,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 47c444c34c352ec438fa68b785aa63d5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 0.3
   Loop: 1
   Mute: 0
@@ -459,7 +458,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.8
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -511,7 +510,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a0212963d11a06c4caa454df8e2a2a57, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

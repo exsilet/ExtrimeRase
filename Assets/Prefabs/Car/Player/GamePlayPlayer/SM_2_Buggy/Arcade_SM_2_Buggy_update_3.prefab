@@ -237,7 +237,6 @@ MonoBehaviour:
   MaxPitch: 3
   SkidSound: {fileID: 5619766736484646260}
   skidWidth: 0.21627414
-  _startBattle: {fileID: 0}
 --- !u!54 &1355663320718696952
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -470,6 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventory: {fileID: 843162500906912172}
+  _heroes: {fileID: 0}
 --- !u!114 &8365751001402232668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21402,8 +21402,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8118411079268954143}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12761535, y: -0, z: -0, w: 0.99182373}
-  m_LocalPosition: {x: 0, y: 1.57, z: -6}
+  m_LocalRotation: {x: 0.36155206, y: -0.1659429, z: 0.06556189, w: 0.91512007}
+  m_LocalPosition: {x: 3, y: 8, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21591,7 +21591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 1.57, z: -6}
+  m_FollowOffset: {x: 3, y: 8, z: -8}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0.1

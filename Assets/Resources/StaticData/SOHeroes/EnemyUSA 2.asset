@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Lena "Speed" Clark
   _iconPlayer: {fileID: 0}
-  _carPrefab: {fileID: 6624541213571853586, guid: d880ce5b030fa5d419a511b4b7a7d396, type: 3}
+  _carPrefab: {fileID: 2780060566418772707, guid: d89e0ce195de98844a97f9eddca130dc, type: 3}
   _heroesType: 4

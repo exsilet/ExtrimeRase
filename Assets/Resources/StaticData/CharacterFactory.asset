@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: CharacterFactory
   m_EditorClassIdentifier: 
   _characterSkins:
-  - {fileID: 2172946422819415843, guid: 590806d407207c847bf8e50440101dfc, type: 3}
+  - {fileID: 1414215570412708154, guid: b73eaba77395a4145b8faadcc150e359, type: 3}
+  - {fileID: 7067930198008272327, guid: d138575054f4faa429b01dbed042269b, type: 3}
+  - {fileID: 4531317502880378310, guid: 0a1690a465c0990408b55064d1e464c2, type: 3}
   - {fileID: 4197878950730269607, guid: 74a5f1ef04d9b9c43b4cc7b95ae43ff0, type: 3}
+  - {fileID: 1289665768364664410, guid: 4733255e4151a3f4d8725c69f0e64e7f, type: 3}
   - {fileID: -2514766240036667655, guid: 1f77c6c72cc0b114bac38c23f5f42280, type: 3}
