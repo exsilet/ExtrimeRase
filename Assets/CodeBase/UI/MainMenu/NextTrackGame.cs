@@ -50,15 +50,13 @@ namespace UI.MainMenu
 
         private void NextSceneGame(int level, int indexScene)
         {
-            Debug.Log(" switch ");
-            
             switch (level)
             {
                 case 1:
                     CurrentNextScene(indexScene, _oneCompanyScene);
                     break;
                 case 2:
-                    CurrentNextScene(indexScene, _oneCompanyScene);
+                    CurrentNextScene(indexScene, _secondCompanyScene);
                     break;
                 case 3:
                     CurrentNextScene(indexScene, _thirdCompanyScene);

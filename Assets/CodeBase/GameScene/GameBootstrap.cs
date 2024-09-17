@@ -17,6 +17,7 @@ namespace GameScene
         private IPersistentData _persistentPlayerData;
         private NextGameScene _nextGameScene;
         private PlayerScore _playerScore;
+        private PlayerMoney _wallet;
 
         private void Awake()
         {
@@ -37,8 +38,9 @@ namespace GameScene
         {
             _nextGameScene = new NextGameScene(_persistentPlayerData);
             _playerScore = new PlayerScore(_persistentPlayerData);
+            _wallet = new PlayerMoney(_persistentPlayerData);
             
-            _theGarage.Initialize(_persistentPlayerData, _dataProvider, _nextGameScene, _playerScore);
+            _theGarage.Initialize(_persistentPlayerData, _dataProvider, _nextGameScene, _playerScore, _wallet);
         }
 
         private void InitializePlayer()

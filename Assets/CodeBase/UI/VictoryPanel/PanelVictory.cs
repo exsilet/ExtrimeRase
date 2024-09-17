@@ -19,11 +19,13 @@ namespace UI.VictoryPanel
         private int _money;
         private int _finishingLap;
         private int _playerScoreRace;
+        private int _moneyPlayer;
 
         private List<HeroesData> _heroes = new();
 
         public int FinishingLap => _finishingLap;
         public int PlayerScoreRace => _playerScoreRace;
+        public int MoneyPlayer => _moneyPlayer;
 
         public void Initialized(HeroesData heroes) =>
             _heroes.Add(heroes);
@@ -36,7 +38,7 @@ namespace UI.VictoryPanel
             _textExpectations.gameObject.SetActive(true);
             _scoreView.Initialize();
             _panelVictory.gameObject.SetActive(false);
-            Invoke("ShowWinnersAfterDelay", _waitForLeaders);
+            Invoke(nameof(ShowWinnersAfterDelay), _waitForLeaders);
         }
 
         public void OpenPanel()
@@ -72,7 +74,9 @@ namespace UI.VictoryPanel
             {
                 if (_heroes[i].HeroesTypeID == HeroesTypeID.CurrentPlayer)
                 {
-                    _playerScoreRace = _scoreView.GetScorePlace(i + 1);
+                    var numberPlayer = i + 1;
+                    _playerScoreRace = _scoreView.GetScorePlace(numberPlayer);
+                    _moneyPlayer = _scoreView.GetMoneyPlace(numberPlayer);
                 }
             }
         }

@@ -21203,7 +21203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextGameSceneButton: {fileID: 1077109690}
   _oneCompanyScene: 0100000002000000030000000400000002000000030000000400000005000000
-  _secondCompanyScene: 
+  _secondCompanyScene: 0100000002000000030000000400000002000000030000000400000001000000
   _thirdCompanyScene: 
   _fourthCompanyScene: 
   _fifthCompanyScene: 

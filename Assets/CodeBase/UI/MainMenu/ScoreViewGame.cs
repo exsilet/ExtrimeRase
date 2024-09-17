@@ -8,10 +8,16 @@ namespace UI.MainMenu
         [SerializeField] private Text _scorePosition1Text;
         [SerializeField] private Text _scorePosition2Text;
         [SerializeField] private Text _scorePosition3Text;
-
-        private readonly int _pointsFor1stPlace = 400;
-        private readonly int _pointsFor2ndPlace = 200;
-        private readonly int _pointsFor3rdPlace = 100;
+        [SerializeField] private Text _moneyPosition1Text;
+        [SerializeField] private Text _moneyPosition2Text;
+        [SerializeField] private Text _moneyPosition3Text;
+        
+        [SerializeField] private int _pointsFor1stPlace = 400;
+        [SerializeField] private int _pointsFor2ndPlace = 200;
+        [SerializeField] private int _pointsFor3rdPlace = 100;
+        [SerializeField] private int _moneyFor1stPlace = 20000;
+        [SerializeField] private int _moneyFor2ndPlace = 12500;
+        [SerializeField] private int _moneyFor3rdPlace = 5000;
 
         public int PointsFor1stPlace => _pointsFor1stPlace;
         public int PointsFor2ndPlace => _pointsFor2ndPlace;
@@ -22,17 +28,40 @@ namespace UI.MainMenu
             _scorePosition1Text.text = _pointsFor1stPlace.ToString();
             _scorePosition2Text.text = _pointsFor2ndPlace.ToString();
             _scorePosition3Text.text = _pointsFor3rdPlace.ToString();
+
+            _moneyPosition1Text.text = _moneyFor1stPlace.ToString();
+            _moneyPosition2Text.text = _moneyFor2ndPlace.ToString();
+            _moneyPosition3Text.text = _moneyFor3rdPlace.ToString();
         }
 
         public int GetScorePlace(int place)
         {
-            return place switch
+            switch (place)
             {
-                1 => _pointsFor1stPlace,
-                2 => _pointsFor2ndPlace,
-                3 => _pointsFor3rdPlace,
-                _ => 0
-            };
+                case 1:
+                    return _pointsFor1stPlace;
+                case 2:
+                    return _pointsFor2ndPlace;
+                case 3:
+                    return _pointsFor3rdPlace;
+                default:
+                    return 0;
+            }
+        }
+        
+        public int GetMoneyPlace(int place)
+        {
+            switch (place)
+            {
+                case 1:
+                    return _moneyFor1stPlace;
+                case 2:
+                    return _moneyFor2ndPlace;
+                case 3:
+                    return _moneyFor3rdPlace;
+                default:
+                    return 0;
+            }
         }
     }
 }

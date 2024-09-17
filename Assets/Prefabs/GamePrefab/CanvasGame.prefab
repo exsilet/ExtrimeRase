@@ -79,6 +79,85 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C"
+--- !u!1 &264415230380000899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5910384006212137348}
+  - component: {fileID: 3512053090017066471}
+  - component: {fileID: 254706992711833549}
+  m_Layer: 5
+  m_Name: MoneyValueText (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5910384006212137348
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264415230380000899}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1999999, y: 6, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7063009689643035367}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -15.832, y: 259.9995}
+  m_SizeDelta: {x: 123.24, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3512053090017066471
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264415230380000899}
+  m_CullTransparentMesh: 1
+--- !u!114 &254706992711833549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264415230380000899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 31e9027949eff3b40a1e5d085e0a9935, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 5000
 --- !u!1 &457566417491124085
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +982,7 @@ RectTransform:
   - {fileID: 5248785463929740449}
   - {fileID: 252819572666285760}
   - {fileID: 5236438653672693016}
+  - {fileID: 7604840026514189713}
   - {fileID: 1542809161986683563}
   - {fileID: 8451885345841253625}
   - {fileID: 4229521628979050592}
@@ -1052,7 +1132,7 @@ GameObject:
   - component: {fileID: 9190756813541041565}
   - component: {fileID: 4733593814391342682}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: MoneyNameText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1316,6 +1396,15 @@ MonoBehaviour:
   _scorePosition1Text: {fileID: 5227075867583061262}
   _scorePosition2Text: {fileID: 2028296068986738921}
   _scorePosition3Text: {fileID: 8315249455896648604}
+  _moneyPosition1Text: {fileID: 6843633503257094918}
+  _moneyPosition2Text: {fileID: 8191459515836959735}
+  _moneyPosition3Text: {fileID: 254706992711833549}
+  _pointsFor1stPlace: 400
+  _pointsFor2ndPlace: 200
+  _pointsFor3rdPlace: 100
+  _moneyFor1stPlace: 20000
+  _moneyFor2ndPlace: 20000
+  _moneyFor3rdPlace: 20000
 --- !u!1 &2518067881309205944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +1800,7 @@ RectTransform:
   - {fileID: 2176980021629588945}
   - {fileID: 1130553627672158974}
   - {fileID: 5380724107342223464}
+  - {fileID: 8867735983573240919}
   - {fileID: 7981077721179647203}
   - {fileID: 7952704615413234981}
   - {fileID: 1232977228697186473}
@@ -1863,7 +1953,7 @@ GameObject:
   - component: {fileID: 4555083978630249363}
   - component: {fileID: 8657951359365855014}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: MoneyNameText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2161,7 +2251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4976918716866931071
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2255,7 +2345,7 @@ GameObject:
   - component: {fileID: 8290689636743650943}
   - component: {fileID: 6843633503257094918}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoneyValueText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2277,8 +2367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: 288}
-  m_SizeDelta: {x: 389.6263, y: 50}
+  m_AnchoredPosition: {x: 8.5871, y: 288}
+  m_SizeDelta: {x: 145.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8290689636743650943
 CanvasRenderer:
@@ -2321,7 +2411,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "20000 \u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0435\u0439"
+  m_Text: 20000
 --- !u!1 &4254713412821713173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,6 +2833,7 @@ RectTransform:
   - {fileID: 1396721238290676619}
   - {fileID: 7594028536876625482}
   - {fileID: 4562327970196506810}
+  - {fileID: 5910384006212137348}
   - {fileID: 5999530644290206757}
   - {fileID: 2413384523787722103}
   - {fileID: 3872751596532116853}
@@ -3456,7 +3547,7 @@ GameObject:
   - component: {fileID: 1897215877449512611}
   - component: {fileID: 8191459515836959735}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoneyValueText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3478,8 +3569,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139, y: 321.9995}
-  m_SizeDelta: {x: 389.6263, y: 50}
+  m_AnchoredPosition: {x: -6.7769, y: 321.9995}
+  m_SizeDelta: {x: 146.66, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1897215877449512611
 CanvasRenderer:
@@ -3522,7 +3613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "12500 \u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0435\u0439"
+  m_Text: 12500
 --- !u!1 &6488110039838993199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3732,6 +3823,85 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6951789261008113982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8867735983573240919}
+  - component: {fileID: 7150985835389931650}
+  - component: {fileID: 3394812282370121160}
+  m_Layer: 5
+  m_Name: MoneyText (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8867735983573240919
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951789261008113982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 6, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2345733255176127138}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 229.05261, y: 288}
+  m_SizeDelta: {x: 266.2054, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7150985835389931650
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951789261008113982}
+  m_CullTransparentMesh: 1
+--- !u!114 &3394812282370121160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951789261008113982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 31e9027949eff3b40a1e5d085e0a9935, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0435\u0439"
 --- !u!1 &7005082074821128935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,6 +4036,85 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &7258785748192323439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7604840026514189713}
+  - component: {fileID: 5021034158785580211}
+  - component: {fileID: 6388134609990854772}
+  m_Layer: 5
+  m_Name: MoneyText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7604840026514189713
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258785748192323439}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1999999, y: 6, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4791994146414633161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 213.74658, y: 321.9995}
+  m_SizeDelta: {x: 265.0487, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5021034158785580211
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258785748192323439}
+  m_CullTransparentMesh: 1
+--- !u!114 &6388134609990854772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258785748192323439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 31e9027949eff3b40a1e5d085e0a9935, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0435\u0439"
 --- !u!1 &7534508569317936061
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,7 +4654,7 @@ GameObject:
   - component: {fileID: 4914175165977251462}
   - component: {fileID: 3166398212131820266}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoneyText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4427,8 +4676,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144, y: 259.9995}
-  m_SizeDelta: {x: 389.6263, y: 50}
+  m_AnchoredPosition: {x: 203.41406, y: 259.9995}
+  m_SizeDelta: {x: 290.6029, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4914175165977251462
 CanvasRenderer:
@@ -4471,7 +4720,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "5000 \u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0435\u0439"
+  m_Text: "\u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0435\u0439"
 --- !u!1 &8829248435770083510
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,7 +4959,7 @@ GameObject:
   - component: {fileID: 771827115547812054}
   - component: {fileID: 7448308628777605184}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoneyNameText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
