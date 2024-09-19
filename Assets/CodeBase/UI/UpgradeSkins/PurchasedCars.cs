@@ -78,7 +78,7 @@ namespace UI.UpgradeSkins
         {
             _byuCars.Add(new BuyCars(shopItem, shopItem.Model, shopItem.LvlCar, index));
 
-            _autoCarUpdate.SetCurrentCar(index, shopItem);
+            _autoCarUpdate.SetCurrentCar(index);
             _autoCarUpdate.Initialize(_byuCars);
 
             UpdateCarDisplay(shopItem);
@@ -152,7 +152,7 @@ namespace UI.UpgradeSkins
                 if (i == _currentCarIndex)
                 {
                     _skinBuyPlacement.InstantiateModel(_byuCars[i].Model);
-                    _autoCarUpdate.SetCurrentCar(_byuCars[i].IndexModel, _byuCars[i].ShopItem);
+                    _autoCarUpdate.SetCurrentCar(_byuCars[i].IndexModel);
                     _startGame.CurrentCar(_byuCars[i].ShopItem);
                 }
             }

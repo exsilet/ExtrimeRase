@@ -36,7 +36,6 @@ namespace UI.UpgradeSkins
 
         private int[] _carUpgradeLevels;
         private GameObject _currentCarInstance;
-        private ShopItem _currentShopItem;
 
         private IDataProvider _dataProvider;
         private PlayerMoney _playerMoney;
@@ -85,9 +84,8 @@ namespace UI.UpgradeSkins
             _upgradeButton.onClick.RemoveListener(ShowConfirmationPanel);
         }
 
-        public void SetCurrentCar(int index, ShopItem shopItem)
+        public void SetCurrentCar(int index)
         {
-            _currentShopItem = shopItem;
             _currentCarIndexShop = index;
             DisplayCar();
         }
@@ -125,17 +123,6 @@ namespace UI.UpgradeSkins
 
         private BuyCars GetBuyCar()
         {
-            // var listCars = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
-            //
-            // foreach (ShopItem item in listCars)
-            // {
-            //     if (item == _currentShopItem)
-            //     {
-            //         
-            //     }
-            // }
-            
-            
             for (int i = 0; i < _buyCars.Count(); i++)
             {
                 if (_buyCars[i].IndexModel == _currentCarIndexShop)
