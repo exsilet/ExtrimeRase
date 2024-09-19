@@ -946,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5261cf65034ccaab51aa8734bccc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carSkinItem: {fileID: 11400000, guid: be6c5f0b2b5aa13479bb926f2c95f919, type: 2}
+  _carSkinItem: {fileID: 11400000, guid: be6c5f0b2b5aa13479bb926f2c95f919, type: 2}
 --- !u!1 &1950468925559621542
 GameObject:
   m_ObjectHideFlags: 0

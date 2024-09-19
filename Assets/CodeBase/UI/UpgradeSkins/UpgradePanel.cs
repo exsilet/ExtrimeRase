@@ -16,13 +16,6 @@ namespace UI.UpgradeSkins
         [SerializeField] private Transform _itemsParent;
         [SerializeField] private UpgradeItemViewFactory _upgradeItemViewFactory;
 
-        private OpenSkinsChecker _openSkinsChecker;
-        
-        public void Initialize(OpenSkinsChecker openSkinsChecker)
-        {
-            _openSkinsChecker = openSkinsChecker;
-        }
-        
         public void Show(IEnumerable<ShopItem> items, ShopItem shopItem)
         {
             Clear();

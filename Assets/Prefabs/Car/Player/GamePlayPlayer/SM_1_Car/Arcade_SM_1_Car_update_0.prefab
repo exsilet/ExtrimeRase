@@ -20685,7 +20685,6 @@ MonoBehaviour:
   MaxPitch: 3
   SkidSound: {fileID: 7539015528595579555}
   skidWidth: 0.19310191
-  _startBattle: {fileID: 0}
 --- !u!54 &9046955756120021997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20971,7 +20970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5261cf65034ccaab51aa8734bccc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carSkinItem: {fileID: 11400000, guid: a2b2c0896b3d88c45a7436aee182fa17, type: 2}
+  _carSkinItem: {fileID: 11400000, guid: a2b2c0896b3d88c45a7436aee182fa17, type: 2}
 --- !u!1 &8557817451826534745
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ namespace UI.UpgradeSkins
         private void OnValidate()
         {
             var characterSkinsDuplicates = _characterSkinItems.GroupBy(item => item.SkinType)
-                .Where(array => array.Count() > 1);
+                .Where(array => array.Count() > 5);
 
             if (characterSkinsDuplicates.Count() > 0)
                 throw new InvalidOperationException(nameof(_characterSkinItems));

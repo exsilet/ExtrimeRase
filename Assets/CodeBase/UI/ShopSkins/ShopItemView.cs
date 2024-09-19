@@ -20,8 +20,7 @@ namespace UI.ShopSkins
         [SerializeField] private Slider _healthSlider;
         [SerializeField] private Slider _protectionSlider;
         [SerializeField] private Slider _weaponPowerSlider;
-
-        // Минимальные и максимальные значения для нормализации
+        
         private readonly float _minSpeed = 10f;
         private readonly float _maxSpeed = 142f;
 
@@ -35,9 +34,9 @@ namespace UI.ShopSkins
         private readonly float _maxWeaponPower = 118f;
 
         public ShopItem Item { get; private set; }
-
         public bool IsLock { get; private set; }
 
+        public int LvlCar => Item.LvlCar;
         public int Price => Item.Price;
         public GameObject Model => Item.Model;
 
@@ -50,8 +49,7 @@ namespace UI.ShopSkins
             _protection.text = item.Protection.ToString();
             _health.text = item.Health.ToString();
             _weaponPower.text = item.WeaponPower.ToString();
-
-            // Установка значений слайдеров на основе нормализации
+            
             _speedSlider.value = NormalizeValue(item.Speed, _minSpeed, _maxSpeed);
             _healthSlider.value = NormalizeValue(item.Health, _minHealth, _maxHealth);
             _protectionSlider.value = NormalizeValue(item.Protection, _minProtection, _maxProtection);
@@ -75,8 +73,7 @@ namespace UI.ShopSkins
             _priceView.Hide();
             _iconBye.gameObject.SetActive(true);
         }
-
-        // Метод для нормализации значений
+        
         private float NormalizeValue(float currentValue, float minValue, float maxValue)
         {
             return (currentValue - minValue) / (maxValue - minValue);

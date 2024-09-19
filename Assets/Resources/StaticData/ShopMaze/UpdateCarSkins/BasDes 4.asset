@@ -20,4 +20,4 @@ MonoBehaviour:
   <Model>k__BackingField: {fileID: 2868633211837337567, guid: c2bafc70fd33872489b255cb4d598753, type: 3}
   <LvlCar>k__BackingField: 4
   <Price>k__BackingField: 50000
-  <SkinType>k__BackingField: 54
+  <SkinType>k__BackingField: 10

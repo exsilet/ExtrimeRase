@@ -3,11 +3,11 @@ using System.Linq;
 using DefaultNamespace;
 using Hero;
 using SaveData;
-using UI.MainMenu;
 using UI.ShopSkins;
 using UI.UpgradeSkins;
 using UI.Visitor;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 namespace UI
@@ -26,20 +26,17 @@ namespace UI
         [SerializeField] private SkinPlacement _skinPlacement;
         [SerializeField] private PurchasedCars _purchasedCars;
 
-        private IPersistentData _persistentData;
         private IDataProvider _dataProvider;
-
+        
+        private List<ShopItem> _shopItems;
         private ShopItemView _previewedItem;
-
         private PlayerMoney _wallet;
+        private int _currentCarIndex = 0;
 
         private SkinSelector _skinSelector;
         private SkinUnlocker _skinUnlocker;
         private OpenSkinsChecker _openSkinsChecker;
-        private SelectedSkinChecker _selectedSkinChecker;
-        private int _currentCarIndex = 0;
-
-        private List<ShopItem> _shopItems;
+        private SkinUpdater _skinUpdater;
 
         private void OnEnable()
         {
@@ -52,21 +49,19 @@ namespace UI
         private void OnDisable()
         {
             _shopPanel.ItemView -= OnItemView;
-
             _buyButton.Click -= OnBuyButtonClick;
             _nextButtonCar.onClick.RemoveListener(ShowNextCar);
             _backButtonCar.onClick.RemoveListener(ShowPreviousCar);
         }
 
-        public void Initialize(IPersistentData persistentData, IDataProvider dataProvider, PlayerMoney wallet, OpenSkinsChecker openSkinsChecker,
-            SelectedSkinChecker selectedSkinChecker, SkinSelector skinSelector, SkinUnlocker skinUnlocker)
+        public void Initialize(IDataProvider dataProvider, PlayerMoney wallet, OpenSkinsChecker openSkinsChecker,
+            SelectedSkinChecker selectedSkinChecker, SkinSelector skinSelector, SkinUnlocker skinUnlocker, SkinUpdater skinUpdater)
         {
             _wallet = wallet;
-            _persistentData = persistentData;
             _openSkinsChecker = openSkinsChecker;
-            _selectedSkinChecker = selectedSkinChecker;
             _skinSelector = skinSelector;
             _skinUnlocker = skinUnlocker;
+            _skinUpdater = skinUpdater;
 
             _dataProvider = dataProvider;
 
@@ -86,14 +81,6 @@ namespace UI
 
             if (_openSkinsChecker.IsOpened)
             {
-                // _selectedSkinChecker.Visit(_previewedItem.Item);
-                //
-                // if (_selectedSkinChecker.IsSelected)
-                // {
-                //     HideBuyButton();
-                //     return;
-                // }
-
                 HideBuyButton();
             }
             else
@@ -153,6 +140,7 @@ namespace UI
         private void SelectSkin()
         {
             _skinSelector.Visit(_previewedItem.Item);
+            _skinUpdater.Visit(_previewedItem.Item, _previewedItem.LvlCar);
             HideBuyButton();
         }
 

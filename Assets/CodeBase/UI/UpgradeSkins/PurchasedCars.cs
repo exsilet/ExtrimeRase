@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using DefaultNamespace;
 using SaveData;
-using UI.MainMenu;
 using UI.ShopSkins;
 using UI.StartGameUI;
 using UI.Visitor;
@@ -28,11 +27,13 @@ namespace UI.UpgradeSkins
             IndexModel = indexModel;
         }
     }
-    
+
     public class PurchasedCars : MonoBehaviour
     {
         [SerializeField] private Transform _carDisplayPoint;
-        [SerializeField] private ShopContent _contentItems;
+
+        //[SerializeField] private ShopContent _contentItems;
+        [SerializeField] private UpgradeContent _contentItems;
         [SerializeField] private SkinBuyPlacement _skinBuyPlacement;
         [SerializeField] private AutoCarUpdate _autoCarUpdate;
         [SerializeField] private StartGamePlay _startGame;
@@ -42,58 +43,53 @@ namespace UI.UpgradeSkins
         private List<BuyCars> _byuCars = new();
         private int _currentCarIndex = 0;
 
+        private List<ShopItem> _shopItems;
+        private ShopItemView _previewedItem;
         private IDataProvider _dataProvider;
-        private IPersistentData _persistentData;
         private OpenSkinsChecker _openSkinsChecker;
         private SkinSelector _skinSelector;
-        private SelectedSkinChecker _selectedSkinChecker;
-        private List<ShopItem> _shopItems;
-        private ShopItem _shopItem;
-        private ShopItemView _previewedItem;
-        public List<BuyCars> ByuCarsList => _byuCars;
+        private OpenUpdateSkinsChecker _openUpdateSkins;
 
-        public void InitializeLoad(IPersistentData persistentData, IDataProvider dataProvider,
-            OpenSkinsChecker openSkinsChecker, SkinSelector skinsSelector, SelectedSkinChecker selectedSkinChecker)
+        public void InitializeLoad(IDataProvider dataProvider,
+            OpenSkinsChecker openSkinsChecker, SkinSelector skinsSelector, OpenUpdateSkinsChecker openUpdateSkinsChecker)
         {
-            _persistentData = persistentData;
             _dataProvider = dataProvider;
             _openSkinsChecker = openSkinsChecker;
             _skinSelector = skinsSelector;
-            _selectedSkinChecker = selectedSkinChecker;
+            _openUpdateSkins = openUpdateSkinsChecker;
 
             _shopItems = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
 
-            for (int i = 0; i < _shopItems.Count; i++)
+            foreach (var item in _shopItems)
             {
-                _openSkinsChecker.Visit(_shopItems[i]);
+                _openUpdateSkins.Visit(item, item.LvlCar);
 
-                if (_openSkinsChecker.IsOpened)
+                if (_openUpdateSkins.IsOpened)
                 {
-                    UpdateCarDisplay(_shopItems[i]);
-                    Initialize(_shopItems[i], i);
+                    UpdateCarDisplay(item);
+                    Initialize(item, _openUpdateSkins.IndexModel);
                 }
             }
-            
+
             _startGame.Initialize(_skinSelector, _dataProvider);
         }
 
         public void Initialize(ShopItem shopItem, int index)
         {
-            _shopItem = shopItem;
             _byuCars.Add(new BuyCars(shopItem, shopItem.Model, shopItem.LvlCar, index));
-            
-            _autoCarUpdate.SetCurrentCar(index);
+
+            _autoCarUpdate.SetCurrentCar(index, shopItem);
             _autoCarUpdate.Initialize(_byuCars);
-            
+
             UpdateCarDisplay(shopItem);
         }
 
         public void InitializeUpdateCarLvl(ShopItem newLevelCar, int indexCurrentCar)
         {
             _byuCars.RemoveAll(x => x.IndexModel == indexCurrentCar);
-            
+
             _byuCars.Add(new BuyCars(newLevelCar, newLevelCar.Model, newLevelCar.LvlCar, indexCurrentCar));
-            
+
             _autoCarUpdate.Initialize(_byuCars);
             UpdateCarDisplay(newLevelCar);
         }
@@ -113,7 +109,7 @@ namespace UI.UpgradeSkins
         private void UpdateCarDisplay(ShopItem shopItem)
         {
             Clear();
-            
+
             _startGame.CurrentCar(shopItem);
             _skinBuyPlacement.InstantiateModel(shopItem.Model);
         }
@@ -134,7 +130,7 @@ namespace UI.UpgradeSkins
             {
                 _currentCarIndex = 0;
             }
-            
+
             NextCarModel();
         }
 
@@ -145,7 +141,7 @@ namespace UI.UpgradeSkins
             {
                 _currentCarIndex = _byuCars.Count - 1;
             }
-            
+
             NextCarModel();
         }
 
@@ -156,7 +152,7 @@ namespace UI.UpgradeSkins
                 if (i == _currentCarIndex)
                 {
                     _skinBuyPlacement.InstantiateModel(_byuCars[i].Model);
-                    _autoCarUpdate.SetCurrentCar(_byuCars[i].IndexModel);
+                    _autoCarUpdate.SetCurrentCar(_byuCars[i].IndexModel, _byuCars[i].ShopItem);
                     _startGame.CurrentCar(_byuCars[i].ShopItem);
                 }
             }

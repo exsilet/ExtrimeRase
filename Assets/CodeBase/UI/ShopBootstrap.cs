@@ -31,6 +31,8 @@ namespace UI
             InitializeBuyCar();
 
             InitializeShop();
+            
+            InitializeUpdateCar();
 
             InitializeGameTrace();
         }
@@ -62,9 +64,17 @@ namespace UI
         {
             SkinSelector skinSelector = new SkinSelector(_persistentPlayerData);
             OpenSkinsChecker openSkinsChecker = new OpenSkinsChecker(_persistentPlayerData);
-            SelectedSkinChecker selectedSkinChecker = new SelectedSkinChecker(_persistentPlayerData);
+            OpenUpdateSkinsChecker openUpdateSkinsChecker = new OpenUpdateSkinsChecker(_persistentPlayerData);
+
+            _purchasedCars.InitializeLoad(_dataProvider, openSkinsChecker, skinSelector, openUpdateSkinsChecker);
+        }
+        
+        private void InitializeUpdateCar()
+        {
+            SkinSelector skinSelector = new SkinSelector(_persistentPlayerData);
+            SkinUpdater skinUpdater = new SkinUpdater(_persistentPlayerData);
             
-            _purchasedCars.InitializeLoad(_persistentPlayerData, _dataProvider, openSkinsChecker, skinSelector, selectedSkinChecker);
+            _autoCarUpdate.InitializeLoad(_dataProvider, _wallet, skinUpdater, skinSelector);
         }
 
         private void InitializeShop()
@@ -73,8 +83,9 @@ namespace UI
             SelectedSkinChecker selectedSkinChecker = new SelectedSkinChecker(_persistentPlayerData);
             SkinSelector skinSelector = new SkinSelector(_persistentPlayerData);
             SkinUnlocker skinUnlocker = new SkinUnlocker(_persistentPlayerData);
+            SkinUpdater skinUpdater = new SkinUpdater(_persistentPlayerData);
             
-            _shop.Initialize(_persistentPlayerData, _dataProvider, _wallet, openSkinsChecker, selectedSkinChecker, skinSelector, skinUnlocker);
+            _shop.Initialize(_dataProvider, _wallet, openSkinsChecker, selectedSkinChecker, skinSelector, skinUnlocker, skinUpdater);
         }
 
         private void LoadDataOrInit()

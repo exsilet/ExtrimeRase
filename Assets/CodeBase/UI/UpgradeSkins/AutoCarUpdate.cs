@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UI.MainMenu;
+using Hero;
+using SaveData;
 using UI.ShopSkins;
+using UI.Visitor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,17 +33,30 @@ namespace UI.UpgradeSkins
         private int _currentCarIndexShop = 0;
         private int _currentUpgradeLevel;
         private readonly int _maxLvlUpgrade = 5;
-        
+
         private int[] _carUpgradeLevels;
         private GameObject _currentCarInstance;
         private ShopItem _currentShopItem;
-        
+
+        private IDataProvider _dataProvider;
+        private PlayerMoney _playerMoney;
+        private SkinUpdater _skinUpdater;
+        private SkinSelector _skinSelector;
+
         private List<BuyCars> _buyCars = new();
-        public List<CarCard> Cards => _cars;
+
+        public void InitializeLoad(IDataProvider dataProvider, PlayerMoney playerMoney, SkinUpdater skinUpdater, SkinSelector skinSelector)
+        {
+            _dataProvider = dataProvider;
+            _playerMoney = playerMoney;
+            _skinUpdater = skinUpdater;
+            _skinSelector = skinSelector;
+        }
 
         public void Initialize(List<BuyCars> byuCars)
         {
             _buyCars = byuCars;
+
             DisplayCar();
 
             OnCharacterSkinsButtonClick();
@@ -70,34 +85,26 @@ namespace UI.UpgradeSkins
             _upgradeButton.onClick.RemoveListener(ShowConfirmationPanel);
         }
 
-        public void SetCurrentCar(int index)
+        public void SetCurrentCar(int index, ShopItem shopItem)
         {
+            _currentShopItem = shopItem;
             _currentCarIndexShop = index;
             DisplayCar();
         }
 
         public void OnYesButtonClicked()
         {
-            // if (_wallet.IsEnough(_previewedItem.Price))
-            // {
-            //     //_wallet.Spend(_previewedItem.Price);
-            //     //_skinUnlocker.Visit(_previewedItem.Item);
-            //     
-            //     ApplyUpgrade();
-            //
-            //     _confirmationPanel.gameObject.SetActive(false);
-            //
-            //     ActiveButton();
-            //     
-            //     _dataProvider.Save();
-            // }
-            
-            ApplyUpgrade();
             var currentCar = GetBuyCar();
-            
-            _confirmationPanel.gameObject.SetActive(false);
-            
             ActiveButton(currentCar);
+
+            if (_playerMoney.IsEnough(currentCar.ShopItem.Price))
+            {
+                _playerMoney.Spend(currentCar.ShopItem.Price);
+
+                ApplyUpgrade();
+
+                _confirmationPanel.gameObject.SetActive(false);
+            }
         }
 
         private void DisplayCar()
@@ -118,6 +125,17 @@ namespace UI.UpgradeSkins
 
         private BuyCars GetBuyCar()
         {
+            // var listCars = _contentItems.CharacterSkinItems.Cast<ShopItem>().ToList();
+            //
+            // foreach (ShopItem item in listCars)
+            // {
+            //     if (item == _currentShopItem)
+            //     {
+            //         
+            //     }
+            // }
+            
+            
             for (int i = 0; i < _buyCars.Count(); i++)
             {
                 if (_buyCars[i].IndexModel == _currentCarIndexShop)
@@ -139,12 +157,12 @@ namespace UI.UpgradeSkins
             var currentCar = GetBuyCar();
             int carLevel = GetCarLevel(currentCar);
             _currentUpgradeLevel = carLevel;
-            
+
             if (_currentUpgradeLevel < _maxLvlUpgrade - 1)
             {
                 _currentUpgradeLevel++;
                 UpdateCarDisplay(_currentUpgradeLevel);
-            
+
                 StartCoroutine(BounceAnimation());
             }
         }
@@ -155,13 +173,18 @@ namespace UI.UpgradeSkins
             {
                 Destroy(_currentCarInstance);
             }
-            
+
             if (_buyCars.Count > 0)
             {
                 _currentCarInstance = Instantiate(_cars[_currentCarIndexShop].upgradeLevels[lvlCar], _carDisplayPoint.position, _carDisplayPoint.rotation);
                 _currentCarInstance.transform.SetParent(_carDisplayPoint);
 
-                CharacterSkinItem newLevelCar = _currentCarInstance.GetComponent<CharacterSkin>().CarSkinItem;
+                ShopItem newLevelCar = _currentCarInstance.GetComponent<CharacterSkin>().ShopItems;
+                
+                _skinUpdater.Visit(newLevelCar, lvlCar);
+                _skinSelector.Visit(newLevelCar);
+                _dataProvider.Save();
+
                 _purchasedCars.InitializeUpdateCarLvl(newLevelCar, _currentCarIndexShop);
             }
         }
@@ -180,9 +203,9 @@ namespace UI.UpgradeSkins
             {
                 _nextCar = 0;
             }
-            
+
             NextModelCar();
-            
+
             BuyCars currentCar = GetBuyCar();
             _upgradePanel.Show(_contentItems.CharacterSkinItems.Cast<ShopItem>(), currentCar.ShopItem);
 
@@ -197,9 +220,9 @@ namespace UI.UpgradeSkins
             {
                 _nextCar = _buyCars.Count - 1;
             }
-            
+
             NextModelCar();
-            
+
             BuyCars currentCar = GetBuyCar();
             _upgradePanel.Show(_contentItems.CharacterSkinItems.Cast<ShopItem>(), currentCar.ShopItem);
 
@@ -234,7 +257,7 @@ namespace UI.UpgradeSkins
             Vector3 originalPosition = _currentCarInstance.transform.localPosition;
             float bounceHeight = 2f;
             float bounceTime = 0.2f;
-        
+
             // Подпрыгивание вверх
             float elapsedTime = 0;
             while (elapsedTime < bounceTime)
@@ -244,7 +267,7 @@ namespace UI.UpgradeSkins
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-        
+
             elapsedTime = 0;
             while (elapsedTime < bounceTime)
             {
@@ -253,7 +276,7 @@ namespace UI.UpgradeSkins
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-        
+
             _currentCarInstance.transform.localPosition = originalPosition;
         }
     }

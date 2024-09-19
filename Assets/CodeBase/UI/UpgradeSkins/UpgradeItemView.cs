@@ -1,5 +1,4 @@
-﻿using System;
-using Common;
+﻿using Common;
 using TMPro;
 using UI.ShopSkins;
 using UnityEngine;

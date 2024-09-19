@@ -13,13 +13,12 @@ namespace SaveData
 
         private List<CarSkins> _openCharacterSkins;
         private List<SlotCarData> _slotCarsData;
-        private int[] _carUpgradeLevels;
 
         private int _allMoney;
-
         private int _indexScene;
         private int _level;
         private int _scoreGameTrack;
+        private int _skinLvl;
 
         public DataBase()
         {
@@ -31,7 +30,7 @@ namespace SaveData
 
             _openCharacterSkins = new List<CarSkins>() { _selectedCarSkin };
 
-            _slotCarsData = new List<SlotCarData>() { new SlotCarData(_selectedCarSkin, 0) };
+            _slotCarsData = new List<SlotCarData>() { new(_selectedCarSkin, 0) };
         }
 
         public int Money
@@ -95,7 +94,7 @@ namespace SaveData
         }
 
         [JsonConstructor]
-        public DataBase(int money, CarSkins selectedCarSkin, List<CarSkins> openCharacterSkins, int skinLvl, int indexScene, int levelGame)
+        public DataBase(int money, CarSkins selectedCarSkin, List<CarSkins> openCharacterSkins, int indexScene, int levelGame, List<SlotCarData> openUpdateCharacterSkins)
         {
             Money = money;
             IndexScene = indexScene;
@@ -105,7 +104,8 @@ namespace SaveData
 
             _openCharacterSkins = new List<CarSkins>(openCharacterSkins);
 
-            _slotCarsData = new List<SlotCarData> { new(selectedCarSkin, skinLvl) };
+            //_slotCarsData = new List<SlotCarData> { new(selectedCarSkin, SkinLevel) };
+            _slotCarsData = new List<SlotCarData>(openUpdateCharacterSkins);
         }
 
         public CarSkins SelectedCarSkin
@@ -120,21 +120,22 @@ namespace SaveData
             }
         }
 
-        public void AddNewCar(CarSkins skins, int index)
+        public void AddNewCar(CarSkins skins, int lvlCar)
         {
-            foreach (var item in _slotCarsData)
+            foreach (SlotCarData item in _slotCarsData)
             {
                 if (item.CarSkins == skins)
                 {
                     item.CarSkins = skins;
-                    item.LvlCarUpgrade = index;
+                    item.LvlCarUpgrade = lvlCar;
                     return;
                 }
             }
 
-            _slotCarsData.Add(new SlotCarData(skins, index));
+            _slotCarsData.Add(new SlotCarData(skins, lvlCar));
         }
 
+        public IEnumerable<SlotCarData> OpenUpdateCharacterSkins => _slotCarsData;
         public IEnumerable<CarSkins> OpenCharacterSkins => _openCharacterSkins;
 
         public void OpenCharacterSkin(CarSkins skin)

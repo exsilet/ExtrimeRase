@@ -13,7 +13,7 @@ namespace UI
         public UpgradeItemView Get(ShopItem data, Transform parent)
         {
             UpgradeItemViewVisitor visitor = new UpgradeItemViewVisitor(_carItemViewPrefab);
-            visitor.Visit(data);
+            visitor.Visit(data, data.LvlCar);
 
             UpgradeItemView instance = Instantiate(visitor.Prefab, parent);
             instance.Initialize(data, data.LvlCar);
@@ -21,7 +21,7 @@ namespace UI
             return instance;
         }
 
-        private class UpgradeItemViewVisitor : IShopItemVisitor
+        private class UpgradeItemViewVisitor : IUpgradeItemViewVisitor
         {
             private UpgradeItemView _carItemViewPrefab;
             
@@ -32,9 +32,12 @@ namespace UI
 
             public UpgradeItemView Prefab { get; private set; }
 
-            public void Visit(ShopItem shopItem) => Visit((dynamic)shopItem);
+            public void Visit(ShopItem shopItem, int lvlCar) => Visit((dynamic)shopItem, lvlCar);
 
-            public void Visit(CharacterSkinItem characterSkinItem) => Prefab = _carItemViewPrefab;
+            public void Visit(CharacterSkinItem characterSkinItem, int lvlCar)
+            {
+                Prefab = _carItemViewPrefab;
+            }
         }
     }
 }
