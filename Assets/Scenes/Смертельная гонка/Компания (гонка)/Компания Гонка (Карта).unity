@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 5106216}
   - component: {fileID: 5106219}
   - component: {fileID: 5106218}
-  - component: {fileID: 5106217}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -161,38 +160,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.85, y: -4.582}
   m_SizeDelta: {x: 1555.841, y: 834.588}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5106217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5106215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiText: {fileID: 5106218}
-  fullText: "\u0410\u0431\u0443 \"\u041F\u0435\u0441\u0447\u0430\u043D\u044B\u0439
-    \u0412\u043E\u043B\u043A\" \u0425\u0430\u043B\u0438\u0434, \u043C\u0430\u0441\u0442\u0435\u0440
-    \u043F\u0443\u0441\u0442\u044B\u043D\u043D\u044B\u0445 \u0433\u043E\u043D\u043E\u043A,
-    \u043D\u0430\u0447\u0430\u043B \u0441\u0432\u043E\u044E \u043A\u0430\u0440\u044C\u0435\u0440\u0443,
-    \u043F\u043E\u043A\u043E\u0440\u044F\u044F \u0431\u0435\u0441\u043A\u0440\u0430\u0439\u043D\u0438\u0435
-    \u0431\u0430\u0440\u0445\u0430\u043D\u044B \u0421\u0430\u0445\u0430\u0440\u044B.
-    \u0415\u0433\u043E \u0432\u043D\u0435\u0434\u043E\u0440\u043E\u0436\u043D\u0438\u043A
-    \u043A\u0430\u043A \u0431\u0443\u0434\u0442\u043E \u0441\u043E\u0437\u0434\u0430\u043D
-    \u0434\u043B\u044F \u043F\u0435\u0441\u0447\u0430\u043D\u044B\u0445 \u0431\u0443\u0440\u044C,
-    \u0430 \u0441\u0430\u043C \u043E\u043D \u2014 \u0432\u043E\u043F\u043B\u043E\u0449\u0435\u043D\u0438\u0435
-    \u0434\u0440\u0435\u0432\u043D\u0435\u0439 \u0435\u0433\u0438\u043F\u0435\u0442\u0441\u043A\u043E\u0439
-    \u0441\u0438\u043B\u044B \u0438 \u0432\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u0438.
-    \u0410\u0431\u0443 \u0432\u0441\u0442\u0443\u043F\u0430\u0435\u0442 \u0432 \u0433\u043E\u043D\u043A\u0438,
-    \u0447\u0442\u043E\u0431\u044B \u0434\u043E\u043A\u0430\u0437\u0430\u0442\u044C,
-    \u0447\u0442\u043E \u0435\u0433\u043E \u0432\u043E\u043B\u044F \u0438 \u043C\u0430\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E
-    \u0441\u0442\u043E\u043B\u044C \u0436\u0435 \u043D\u0435\u043F\u043E\u043A\u043E\u043B\u0435\u0431\u0438\u043C\u044B,
-    \u043A\u0430\u043A \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u044B, \u043F\u043E\u0434
-    \u043A\u043E\u0442\u043E\u0440\u044B\u043C\u0438 \u043E\u043D \u0432\u044B\u0440\u043E\u0441."
-  typingSpeed: 0.05
 --- !u!114 &5106218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +213,10 @@ PrefabInstance:
     - target: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       propertyPath: m_Name
       value: RassiaRace
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6599409142045364822, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       propertyPath: m_Pivot.x
@@ -356,6 +327,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 793629522}
+    - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 793629526}
   m_SourcePrefab: {fileID: 100100000, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
 --- !u!224 &63708467 stripped
 RectTransform:
@@ -526,6 +500,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85429537}
   m_CullTransparentMesh: 1
+--- !u!1 &129365630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129365632}
+  - component: {fileID: 129365631}
+  m_Layer: 0
+  m_Name: SoundText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &129365631
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129365630}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3649c8ff278f3d94599e459632a1f766, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1.28
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &129365632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129365630}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 948.5051, y: 590.32385, z: 8.900461}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &133990725
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,8 +664,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1637.7, y: -114.17}
-  m_SizeDelta: {x: 1079.6, y: 553.53}
+  m_AnchoredPosition: {x: -1742.369, y: -47.563}
+  m_SizeDelta: {x: 1288.938, y: 686.745}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &133990727
 CanvasGroup:
@@ -651,8 +753,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -448.743, y: -803.0001}
-  m_SizeDelta: {x: 964.579, y: 426.45}
+  m_AnchoredPosition: {x: -457.48328, y: -897.3941}
+  m_SizeDelta: {x: 1149.871, y: 720.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &148072085
 MonoBehaviour:
@@ -861,7 +963,6 @@ GameObject:
   - component: {fileID: 333939803}
   - component: {fileID: 333939806}
   - component: {fileID: 333939805}
-  - component: {fileID: 333939804}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -888,33 +989,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0072174, y: 0.000051498}
   m_SizeDelta: {x: 1334.5, y: 809.57}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &333939804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333939802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiText: {fileID: 333939805}
-  fullText: "\u0418\u0440\u0438\u043D\u0430 \"\u041B\u0435\u0434\u044F\u043D\u0430\u044F
-    \u041A\u043E\u0440\u043E\u043B\u0435\u0432\u0430\" \u041B\u0443\u043A\u0438\u043D\u0430
-    \u0432\u044B\u0440\u043E\u0441\u043B\u0430 \u043D\u0430 \u0437\u0430\u0441\u043D\u0435\u0436\u0435\u043D\u043D\u044B\u0445
-    \u0442\u0440\u0430\u0441\u0441\u0430\u0445 \u0421\u0438\u0431\u0438\u0440\u0438,
-    \u0433\u0434\u0435 \u0441\u0443\u0440\u043E\u0432\u044B\u0435 \u0443\u0441\u043B\u043E\u0432\u0438\u044F
-    \u0437\u0430\u043A\u0430\u043B\u0438\u043B\u0438 \u0435\u0451 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440
-    \u0438 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432\u043E\u0436\u0434\u0435\u043D\u0438\u044F.
-    \u0412 \u0433\u043E\u043D\u043A\u0430\u0445 \u043E\u043D\u0430 \u0438\u0449\u0435\u0442
-    \u043D\u0435 \u0442\u043E\u043B\u044C\u043A\u043E \u043F\u043E\u0431\u0435\u0434\u0443,
-    \u043D\u043E \u0438 \u0445\u043E\u043B\u043E\u0434\u043D\u043E\u0435 \u0441\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u0441\u0442\u0432\u043E,
-    \u043F\u0440\u0435\u0432\u0440\u0430\u0449\u0430\u044F \u043A\u0430\u0436\u0434\u044B\u0439
-    \u0437\u0430\u0435\u0437\u0434 \u0432 \u043B\u0435\u0434\u044F\u043D\u043E\u0439
-    \u0442\u0430\u043D\u0435\u0446 \u043D\u0430 \u0433\u0440\u0430\u043D\u0438 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0435\u0439."
-  typingSpeed: 0.05
 --- !u!114 &333939805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,7 +1042,6 @@ GameObject:
   - component: {fileID: 375811051}
   - component: {fileID: 375811054}
   - component: {fileID: 375811053}
-  - component: {fileID: 375811052}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -995,35 +1068,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.011513, y: 10.238983}
   m_SizeDelta: {x: 1537.7, y: 660.972}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &375811052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375811050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiText: {fileID: 375811053}
-  fullText: "\u041C\u0430\u0440\u0438\u044F \"\u041C\u043E\u043B\u043D\u0438\u044F\"
-    \u0421\u0430\u043D\u0442\u043E\u0441 \u0432\u044B\u0440\u043E\u0441\u043B\u0430
-    \u0441\u0440\u0435\u0434\u0438 \u0443\u043B\u0438\u0447\u043D\u044B\u0445 \u0433\u043E\u043D\u043E\u043A
-    \u0420\u0438\u043E-\u0434\u0435-\u0416\u0430\u043D\u0435\u0439\u0440\u043E, \u0433\u0434\u0435
-    \u0435\u0451 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0438 \u0441\u0442\u0438\u043B\u044C
-    \u0441\u0442\u0430\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434\u043E\u0439.
-    \u0421\u043E\u0447\u0435\u0442\u0430\u044F \u0441\u0442\u0440\u0430\u0441\u0442\u044C
-    \u043A \u043A\u0430\u0440\u043D\u0430\u0432\u0430\u043B\u0443 \u0438 \u043B\u044E\u0431\u043E\u0432\u044C
-    \u043A \u0433\u043E\u043D\u043A\u0430\u043C, \u043E\u043D\u0430 \u0441\u0442\u0440\u0435\u043C\u0438\u0442\u0441\u044F
-    \u043F\u0440\u0438\u043D\u0435\u0441\u0442\u0438 \u044D\u043D\u0435\u0440\u0433\u0438\u044E
-    \u0411\u0440\u0430\u0437\u0438\u043B\u0438\u0438 \u043D\u0430 \u043C\u0438\u0440\u043E\u0432\u044B\u0435
-    \u0442\u0440\u0430\u0441\u0441\u044B, \u043F\u043E\u043A\u043E\u0440\u044F\u044F
-    \u0441\u043E\u043F\u0435\u0440\u043D\u0438\u043A\u043E\u0432 \u043C\u043E\u043B\u043D\u0438\u0435\u043D\u043E\u0441\u043D\u044B\u043C\u0438
-    \u043C\u0430\u043D\u0451\u0432\u0440\u0430\u043C\u0438 \u0438 \u044F\u0440\u043A\u0438\u043C
-    \u043D\u0430\u0441\u0442\u0440\u043E\u0435\u043C."
-  typingSpeed: 0.05
 --- !u!114 &375811053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1571,6 +1615,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &793629526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793629518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 333939805}
+  fullText: "\u0418\u0440\u0438\u043D\u0430 \"\u041B\u0435\u0434\u044F\u043D\u0430\u044F
+    \u041A\u043E\u0440\u043E\u043B\u0435\u0432\u0430\" \u041B\u0443\u043A\u0438\u043D\u0430
+    \u0432\u044B\u0440\u043E\u0441\u043B\u0430 \u043D\u0430 \u0437\u0430\u0441\u043D\u0435\u0436\u0435\u043D\u043D\u044B\u0445
+    \u0442\u0440\u0430\u0441\u0441\u0430\u0445 \u0421\u0438\u0431\u0438\u0440\u0438,
+    \u0433\u0434\u0435 \u0441\u0443\u0440\u043E\u0432\u044B\u0435 \u0443\u0441\u043B\u043E\u0432\u0438\u044F
+    \u0437\u0430\u043A\u0430\u043B\u0438\u043B\u0438 \u0435\u0451 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440
+    \u0438 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432\u043E\u0436\u0434\u0435\u043D\u0438\u044F.
+    \u0412 \u0433\u043E\u043D\u043A\u0430\u0445 \u043E\u043D\u0430 \u0438\u0449\u0435\u0442
+    \u043D\u0435 \u0442\u043E\u043B\u044C\u043A\u043E \u043F\u043E\u0431\u0435\u0434\u0443,
+    \u043D\u043E \u0438 \u0445\u043E\u043B\u043E\u0434\u043D\u043E\u0435 \u0441\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u0441\u0442\u0432\u043E,
+    \u043F\u0440\u0435\u0432\u0440\u0430\u0449\u0430\u044F \u043A\u0430\u0436\u0434\u044B\u0439
+    \u0437\u0430\u0435\u0437\u0434 \u0432 \u043B\u0435\u0434\u044F\u043D\u043E\u0439
+    \u0442\u0430\u043D\u0435\u0446 \u043D\u0430 \u0433\u0440\u0430\u043D\u0438 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0435\u0439."
+  typingSpeed: 0.05
+  typingSound: {fileID: 129365631}
 --- !u!1 &936788468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1743,10 @@ PrefabInstance:
     - target: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       propertyPath: m_Name
       value: BrasilRace
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6599409142045364822, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       propertyPath: m_Pivot.x
@@ -1781,6 +1857,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1076181446}
+    - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1076181450}
   m_SourcePrefab: {fileID: 100100000, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
 --- !u!224 &1076181442 stripped
 RectTransform:
@@ -1879,6 +1958,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1076181450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583062658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 375811053}
+  fullText: "\u041C\u0430\u0440\u0438\u044F \"\u041C\u043E\u043B\u043D\u0438\u044F\"
+    \u0421\u0430\u043D\u0442\u043E\u0441 \u0432\u044B\u0440\u043E\u0441\u043B\u0430
+    \u0441\u0440\u0435\u0434\u0438 \u0443\u043B\u0438\u0447\u043D\u044B\u0445 \u0433\u043E\u043D\u043E\u043A
+    \u0420\u0438\u043E-\u0434\u0435-\u0416\u0430\u043D\u0435\u0439\u0440\u043E, \u0433\u0434\u0435
+    \u0435\u0451 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0438 \u0441\u0442\u0438\u043B\u044C
+    \u0441\u0442\u0430\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434\u043E\u0439.
+    \u0421\u043E\u0447\u0435\u0442\u0430\u044F \u0441\u0442\u0440\u0430\u0441\u0442\u044C
+    \u043A \u043A\u0430\u0440\u043D\u0430\u0432\u0430\u043B\u0443 \u0438 \u043B\u044E\u0431\u043E\u0432\u044C
+    \u043A \u0433\u043E\u043D\u043A\u0430\u043C, \u043E\u043D\u0430 \u0441\u0442\u0440\u0435\u043C\u0438\u0442\u0441\u044F
+    \u043F\u0440\u0438\u043D\u0435\u0441\u0442\u0438 \u044D\u043D\u0435\u0440\u0433\u0438\u044E
+    \u0411\u0440\u0430\u0437\u0438\u043B\u0438\u0438 \u043D\u0430 \u043C\u0438\u0440\u043E\u0432\u044B\u0435
+    \u0442\u0440\u0430\u0441\u0441\u044B, \u043F\u043E\u043A\u043E\u0440\u044F\u044F
+    \u0441\u043E\u043F\u0435\u0440\u043D\u0438\u043A\u043E\u0432 \u043C\u043E\u043B\u043D\u0438\u0435\u043D\u043E\u0441\u043D\u044B\u043C\u0438
+    \u043C\u0430\u043D\u0451\u0432\u0440\u0430\u043C\u0438 \u0438 \u044F\u0440\u043A\u0438\u043C
+    \u043D\u0430\u0441\u0442\u0440\u043E\u0435\u043C."
+  typingSpeed: 0.05
+  typingSound: {fileID: 129365631}
 --- !u!1001 &1105023051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2008,6 +2117,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1105023054}
+    - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1105023058}
   m_SourcePrefab: {fileID: 100100000, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
 --- !u!224 &1105023052 stripped
 RectTransform:
@@ -2111,6 +2223,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1105023058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105023053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 1444337384}
+  fullText: "\u0414\u0436\u0435\u043A \"\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u043D\u043E\u0439
+    \u041B\u043E\u0440\u0434\" \u041E'\u041C\u0430\u043B\u043B\u0435\u0439, \u0431\u044B\u0432\u0448\u0438\u0439
+    \u043C\u0435\u0445\u0430\u043D\u0438\u043A \u0441 \u0432\u043E\u0435\u043D\u043D\u043E\u0439
+    \u0431\u0430\u0437\u044B, \u043F\u0440\u043E\u0441\u043B\u0430\u0432\u0438\u043B\u0441\u044F
+    \u0432 \u0433\u043E\u043D\u043A\u0430\u0445 \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F
+    \u0441\u0432\u043E\u0435\u043C\u0443 \u0442\u0430\u043B\u0430\u043D\u0442\u0443
+    \u0441\u043E\u0437\u0434\u0430\u0432\u0430\u0442\u044C \u043C\u0430\u0448\u0438\u043D\u044B
+    \u043D\u0430 \u043F\u0440\u0435\u0434\u0435\u043B\u0435 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0435\u0439.
+    \u041E\u043D \u043D\u0430\u0447\u0430\u043B \u0443\u0447\u0430\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C
+    \u0432 \u0443\u043B\u0438\u0447\u043D\u044B\u0445 \u0433\u043E\u043D\u043A\u0430\u0445,
+    \u0447\u0442\u043E\u0431\u044B \u0434\u043E\u043A\u0430\u0437\u0430\u0442\u044C,
+    \u0447\u0442\u043E \u0435\u0433\u043E \u043C\u0430\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E
+    \u0438 \u0441\u0442\u0440\u0430\u0441\u0442\u044C \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438
+    \u043C\u043E\u0433\u0443\u0442 \u043F\u0440\u0435\u0432\u0437\u043E\u0439\u0442\u0438
+    \u0434\u0430\u0436\u0435 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u0438\u043E\u043D\u0430\u043B\u043E\u0432
+    NASCAR."
+  typingSpeed: 0.05
+  typingSound: {fileID: 129365631}
 --- !u!1 &1311088037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,8 +2264,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1311088038}
   - component: {fileID: 1311088041}
-  - component: {fileID: 1311088040}
   - component: {fileID: 1311088039}
+  - component: {fileID: 1311088040}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2182,6 +2325,7 @@ MonoBehaviour:
     \u043F\u043E\u0431\u0435\u0434\u0438\u0442\u044C \u0434\u0430\u0436\u0435 \u0441\u0430\u043C\u044B\u0435
     \u0434\u0438\u043A\u0438\u0435 \u0441\u0442\u0438\u0445\u0438\u0438."
   typingSpeed: 0.05
+  typingSound: {fileID: 0}
 --- !u!114 &1311088040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,7 +2476,6 @@ GameObject:
   - component: {fileID: 1444337383}
   - component: {fileID: 1444337385}
   - component: {fileID: 1444337384}
-  - component: {fileID: 1444337386}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2356,8 +2499,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00029755, y: 10.238983}
-  m_SizeDelta: {x: 1220.1, y: 660.972}
+  m_AnchoredPosition: {x: 0, y: -5.494}
+  m_SizeDelta: {x: 1290.021, y: 853.255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444337384
 MonoBehaviour:
@@ -2401,36 +2544,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444337382}
   m_CullTransparentMesh: 1
---- !u!114 &1444337386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444337382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiText: {fileID: 1444337384}
-  fullText: "\u0414\u0436\u0435\u043A \"\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u043D\u043E\u0439
-    \u041B\u043E\u0440\u0434\" \u041E'\u041C\u0430\u043B\u043B\u0435\u0439, \u0431\u044B\u0432\u0448\u0438\u0439
-    \u043C\u0435\u0445\u0430\u043D\u0438\u043A \u0441 \u0432\u043E\u0435\u043D\u043D\u043E\u0439
-    \u0431\u0430\u0437\u044B, \u043F\u0440\u043E\u0441\u043B\u0430\u0432\u0438\u043B\u0441\u044F
-    \u0432 \u0433\u043E\u043D\u043A\u0430\u0445 \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F
-    \u0441\u0432\u043E\u0435\u043C\u0443 \u0442\u0430\u043B\u0430\u043D\u0442\u0443
-    \u0441\u043E\u0437\u0434\u0430\u0432\u0430\u0442\u044C \u043C\u0430\u0448\u0438\u043D\u044B
-    \u043D\u0430 \u043F\u0440\u0435\u0434\u0435\u043B\u0435 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0435\u0439.
-    \u041E\u043D \u043D\u0430\u0447\u0430\u043B \u0443\u0447\u0430\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C
-    \u0432 \u0443\u043B\u0438\u0447\u043D\u044B\u0445 \u0433\u043E\u043D\u043A\u0430\u0445,
-    \u0447\u0442\u043E\u0431\u044B \u0434\u043E\u043A\u0430\u0437\u0430\u0442\u044C,
-    \u0447\u0442\u043E \u0435\u0433\u043E \u043C\u0430\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E
-    \u0438 \u0441\u0442\u0440\u0430\u0441\u0442\u044C \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438
-    \u043C\u043E\u0433\u0443\u0442 \u043F\u0440\u0435\u0432\u0437\u043E\u0439\u0442\u0438
-    \u0434\u0430\u0436\u0435 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u0438\u043E\u043D\u0430\u043B\u043E\u0432
-    NASCAR."
-  typingSpeed: 0.05
 --- !u!1 &1576054309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
@@ -2880,6 +2993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EgypRace
       objectReference: {fileID: 0}
+    - target: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6599409142045364822, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3001,6 +3118,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1760039490}
+    - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1760039494}
   m_SourcePrefab: {fileID: 100100000, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
 --- !u!224 &1760039486 stripped
 RectTransform:
@@ -3099,6 +3219,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1760039494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576054309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 5106218}
+  fullText: "\u0410\u0431\u0443 \"\u041F\u0435\u0441\u0447\u0430\u043D\u044B\u0439
+    \u0412\u043E\u043B\u043A\" \u0425\u0430\u043B\u0438\u0434, \u043C\u0430\u0441\u0442\u0435\u0440
+    \u043F\u0443\u0441\u0442\u044B\u043D\u043D\u044B\u0445 \u0433\u043E\u043D\u043E\u043A,
+    \u043D\u0430\u0447\u0430\u043B \u0441\u0432\u043E\u044E \u043A\u0430\u0440\u044C\u0435\u0440\u0443,
+    \u043F\u043E\u043A\u043E\u0440\u044F\u044F \u0431\u0435\u0441\u043A\u0440\u0430\u0439\u043D\u0438\u0435
+    \u0431\u0430\u0440\u0445\u0430\u043D\u044B \u0421\u0430\u0445\u0430\u0440\u044B.
+    \u0415\u0433\u043E \u0432\u043D\u0435\u0434\u043E\u0440\u043E\u0436\u043D\u0438\u043A
+    \u043A\u0430\u043A \u0431\u0443\u0434\u0442\u043E \u0441\u043E\u0437\u0434\u0430\u043D
+    \u0434\u043B\u044F \u043F\u0435\u0441\u0447\u0430\u043D\u044B\u0445 \u0431\u0443\u0440\u044C,
+    \u0430 \u0441\u0430\u043C \u043E\u043D \u2014 \u0432\u043E\u043F\u043B\u043E\u0449\u0435\u043D\u0438\u0435
+    \u0434\u0440\u0435\u0432\u043D\u0435\u0439 \u0435\u0433\u0438\u043F\u0435\u0442\u0441\u043A\u043E\u0439
+    \u0441\u0438\u043B\u044B \u0438 \u0432\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u0438.
+    \u0410\u0431\u0443 \u0432\u0441\u0442\u0443\u043F\u0430\u0435\u0442 \u0432 \u0433\u043E\u043D\u043A\u0438,
+    \u0447\u0442\u043E\u0431\u044B \u0434\u043E\u043A\u0430\u0437\u0430\u0442\u044C,
+    \u0447\u0442\u043E \u0435\u0433\u043E \u0432\u043E\u043B\u044F \u0438 \u043C\u0430\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E
+    \u0441\u0442\u043E\u043B\u044C \u0436\u0435 \u043D\u0435\u043F\u043E\u043A\u043E\u043B\u0435\u0431\u0438\u043C\u044B,
+    \u043A\u0430\u043A \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u044B, \u043F\u043E\u0434
+    \u043A\u043E\u0442\u043E\u0440\u044B\u043C\u0438 \u043E\u043D \u0432\u044B\u0440\u043E\u0441."
+  typingSpeed: 0.05
+  typingSound: {fileID: 129365631}
 --- !u!1 &1770838967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,6 +4126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TokioRace
       objectReference: {fileID: 0}
+    - target: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6599409142045364822, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4098,6 +4255,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2099773075}
+    - targetCorrespondingSourceObject: {fileID: 6599409142045364821, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2099773079}
   m_SourcePrefab: {fileID: 100100000, guid: 7014f0b476a0ca644bb16063999e74f3, type: 3}
 --- !u!224 &2099773071 stripped
 RectTransform:
@@ -4196,6 +4356,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2099773079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427424376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc9096f3fc0dfb4aae29d13ddecdf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiText: {fileID: 1311088040}
+  fullText: "\u0425\u0438\u0440\u043E \"\u0428\u0442\u043E\u0440\u043C\u043E\u0432\u043E\u0439
+    \u0420\u044B\u0446\u0430\u0440\u044C\" \u0422\u0430\u043A\u0435\u0434\u0430 \u2014
+    \u0433\u0435\u043D\u0438\u0439 \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0439,
+    \u0432\u044B\u0440\u043E\u0441\u0448\u0438\u0439 \u0441\u0440\u0435\u0434\u0438
+    \u0432\u044B\u0441\u043E\u043A\u0438\u0445 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0435\u0439
+    \u0438 \u0441\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0445 \u0438\u043D\u0436\u0435\u043D\u0435\u0440\u043D\u044B\u0445
+    \u0434\u043E\u0441\u0442\u0438\u0436\u0435\u043D\u0438\u0439 \u042F\u043F\u043E\u043D\u0438\u0438.
+    \u041E\u0431\u044A\u0435\u0434\u0438\u043D\u0438\u0432 \u0441\u0430\u043C\u0443\u0440\u0430\u0439\u0441\u043A\u0443\u044E
+    \u0434\u0438\u0441\u0446\u0438\u043F\u043B\u0438\u043D\u0443 \u0441 \u043D\u043E\u0432\u0435\u0439\u0448\u0438\u043C\u0438
+    \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430\u043C\u0438, \u043E\u043D
+    \u0441\u043E\u0437\u0434\u0430\u043B \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C
+    \u0431\u0443\u0434\u0443\u0449\u0435\u0433\u043E, \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u044B\u0439
+    \u043F\u0440\u043E\u0442\u0438\u0432\u043E\u0441\u0442\u043E\u044F\u0442\u044C
+    \u043B\u044E\u0431\u044B\u043C \u0432\u044B\u0437\u043E\u0432\u0430\u043C. \u0412
+    \u0433\u043E\u043D\u043A\u0430\u0445 \u0425\u0438\u0440\u043E \u0441\u0442\u0440\u0435\u043C\u0438\u0442\u0441\u044F
+    \u0434\u043E\u043A\u0430\u0437\u0430\u0442\u044C, \u0447\u0442\u043E \u0440\u0430\u0437\u0443\u043C
+    \u0438 \u0438\u043D\u043D\u043E\u0432\u0430\u0446\u0438\u0438 \u043C\u043E\u0433\u0443\u0442
+    \u043F\u043E\u0431\u0435\u0434\u0438\u0442\u044C \u0434\u0430\u0436\u0435 \u0441\u0430\u043C\u044B\u0435
+    \u0434\u0438\u043A\u0438\u0435 \u0441\u0442\u0438\u0445\u0438\u0438."
+  typingSpeed: 0.05
+  typingSound: {fileID: 129365631}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4205,3 +4399,4 @@ SceneRoots:
   - {fileID: 160103832}
   - {fileID: 1625123636}
   - {fileID: 1415045546}
+  - {fileID: 129365632}
