@@ -21,7 +21,7 @@ namespace Hero
             }
             else
             {
-                if (Input.GetKey(KeyCode.F))
+                if (Input.GetKey(KeyCode.LeftShift))
                 {
                     _inventory.UsedWeapon();
                 }
