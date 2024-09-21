@@ -15,8 +15,8 @@ namespace DefaultNamespace
         [SerializeField] private HeroHealth _heroHealth;
         
         private WeaponView _weaponView;
-        private List<Weapon> _weapons = new List<Weapon>();
         private Weapon _weapon;
+        private List<Weapon> _weapons = new List<Weapon>();
 
         public void Initialized(WeaponView weaponView)
         {

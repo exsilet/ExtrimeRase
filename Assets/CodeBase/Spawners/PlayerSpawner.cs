@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using ArcadeVP;
 using DefaultNamespace;
-using GameScene;
 using Hero;
 using SaveData;
 using SO;
@@ -21,15 +20,14 @@ namespace Spawners
         [SerializeField] private FollowTarget _followTarget;
         [SerializeField] private Minimap _minimapTarget;
         [SerializeField] private float _respawnDelay;
+        [SerializeField] private AttackButton _attackButton;
 
         private HeroHealth _heroHealth;
-        private CharacterFactory _characterFactory;
         private IPersistentData _persistentPlayerData;
         private Player _hero;
 
-        public void Initialized(CharacterFactory characterFactory, IPersistentData persistentData, Player heroes)
+        public void Initialized(IPersistentData persistentData, Player heroes)
         {
-            _characterFactory = characterFactory;
             _hero = heroes;
         }
         
@@ -61,6 +59,7 @@ namespace Spawners
         {
             car.GetComponent<ArcadeVehicleController>().Initialized(_startBattle);
             car.GetComponent<Inventory>().Initialized(_weaponView);
+            _attackButton.Initialized(car.GetComponent<Player>());
             
             _followTarget.Initialized(car.transform);
             _minimapTarget.Initialized(car.transform);

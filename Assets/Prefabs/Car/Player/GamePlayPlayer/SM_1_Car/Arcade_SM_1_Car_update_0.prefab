@@ -20956,7 +20956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 8348165981416655257}
-  _boomPoint: {fileID: 0}
+  _boomPoint: {fileID: 7882507861988711639}
   _heroHealth: {fileID: 6303185140731251659}
 --- !u!114 &-2514766240036667655
 MonoBehaviour:

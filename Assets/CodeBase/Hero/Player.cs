@@ -9,16 +9,28 @@ namespace Hero
         [SerializeField] private Inventory _inventory;
         [SerializeField] private HeroesData _heroes;
 
-        private const string Attack = "Fire1";
+        //private const string Attack = "Fire1";
 
         public HeroesData Heroes => _heroes;
         
         private void Update()
         {
-            if (Input.GetButtonUp(Attack))
+            if (Application.isMobilePlatform)
             {
-                _inventory.UsedWeapon();
+                
             }
+            else
+            {
+                if (Input.GetKey(KeyCode.F))
+                {
+                    _inventory.UsedWeapon();
+                }
+            }
+        }
+
+        public void UseAttack()
+        {
+            _inventory.UsedWeapon();
         }
     }
 }

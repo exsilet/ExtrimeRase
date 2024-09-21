@@ -49,7 +49,7 @@ namespace GameScene
             SkinSelector skinSelector = new SkinSelector(_persistentPlayerData);
             Player hero = _characterFactory.Get(_persistentPlayerData.DataBase.SelectedCarSkin);
             
-            _playerSpawner.Initialized(_characterFactory, _persistentPlayerData, hero);
+            _playerSpawner.Initialized(_persistentPlayerData, hero);
         }
         
         private void LoadDataOrInit()
