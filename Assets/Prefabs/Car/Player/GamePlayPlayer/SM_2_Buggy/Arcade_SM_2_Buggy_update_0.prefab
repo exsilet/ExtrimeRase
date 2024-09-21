@@ -704,8 +704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425c8cf53ade402f8309e17528c9f1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shootPoint: {fileID: 2033472298810634292, guid: 590806d407207c847bf8e50440101dfc, type: 3}
-  _boomPoint: {fileID: 6700547392871357985, guid: 590806d407207c847bf8e50440101dfc, type: 3}
+  _shootPoint: {fileID: 2267181015985581457}
+  _boomPoint: {fileID: 1089794848782775859}
   _heroHealth: {fileID: 8404730551630810482}
 --- !u!114 &1232077271325327564
 MonoBehaviour:
